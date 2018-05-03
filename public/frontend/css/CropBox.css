@@ -1,0 +1,346 @@
+.imageBox {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	/*border:1px solid #aaa;*/
+	/*background: #fff;*/
+    overflow: hidden;
+	background-repeat: no-repeat;
+	cursor:move;
+}
+.imageBox .thumbBox {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 200px;
+	height: 200px;
+	margin-top: -100px;
+	margin-left: -100px;
+	border: 1px solid rgb(102, 102, 102);
+	box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.5);
+	background: none repeat scroll 0% 0% transparent;
+}
+.imageBox .spinner {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	text-align: center;
+	line-height: 400px;
+	background: rgba(0,0,0,0.9);
+}
+.action, .arrows, .arrows1 {
+	width: 97%;
+	height: 30px;
+	margin: 20px;
+	position:fixed;
+	top:0;
+}
+.arrows, .arrows1{
+	top:54px;
+	text-align:right;
+}
+.cropped>img {
+	margin-bottom: 5px;
+	width:50px;
+}
+.cropped{
+	margin-bottom: 5px;
+}
+.pop {
+	position: fixed;
+	z-index: 999;
+	-moz-z-index: 999;
+	-ms-z-index: 999;
+	-o-z-index: 999;
+	-webkit-z-index: 999;
+	width:100vw;
+	height:100vh;
+	/*background-color: #ccc;*/
+	top:0;
+	left:0;
+	right:0;
+	bottom: 0; margin:auto; 
+}
+.croppings{
+	border-bottom:1px dashed #878787;
+	background:url(../images/drop-icon.png)100% 50% no-repeat;
+	margin:0 0 32px 0;
+	height:50px;
+	position:relative;
+	overflow:hidden
+}
+.fileload{
+	width:100%;
+	background:none;
+	border:none;
+	position:absolute;
+}
+.croppings input[type="file"], .croppings1 input[type="file"], .brows-butt input[type="file"]{
+	-webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+	  opacity:0;
+}
+.croppings label, .croppings1 label{
+	font-weight:300;
+	font-size:25px;
+}
+.brows-butt{
+	background:url(../images/choose.png) 0 0 no-repeat;
+	cursor:pointer;
+	float:left;
+	width:50%;
+}
+.button-crop{
+	float:right;
+}
+.button-crop input, .arrows input, .arrows1 input{
+	width:40px;
+	background:#2dc3e8;
+	border:none;
+	border-radius:7px;
+	position:relative;
+	z-index:1;
+	height:30px;
+}
+.button-crop #btnClose input{ margin-top:-2px;}
+.btnCrop, .btnzoom, .btnzoomo, #btnTop, #btnDown, #btnLeft, #btnRight, #btnTop1, #btnDown1, #btnLeft1, #btnRight1 { position:relative; display:inline-block; vertical-align:middle; color:#fff;}
+.btnCrop:after, .btnzoom:after, .btnzoomo:after, #btnTop:after, #btnDown:after, #btnLeft:after, #btnRight:after, #btnTop1:after, #btnDown1:after, #btnLeft1:after, #btnRight1:after, #btnClose:after{
+	position:absolute;
+	width:40px;
+	height:40px;
+	content:'';
+	left:0;
+	background:url(../images/crop.png) center center no-repeat;
+	cursor:pointer;
+	top:5px;
+	z-index:1;
+}
+#btnClose{ color:#fff;}
+.btnzoom:after{
+	background:url(../images/zoom1.png) center center no-repeat;
+}
+.btnzoomo:after{
+	background:url(../images/zoom2.png) center center no-repeat;
+}
+
+#btnTop:after, #btnTop1:after{
+	background:url(../images/t-arr.png) center center no-repeat;
+}
+#btnDown:after, #btnDown1:after{
+	background:url(../images/b-arr.png) center center no-repeat;
+}
+#btnLeft:after, #btnLeft1:after{
+	background:url(../images/l-arr.png) center center no-repeat;
+}
+#btnRight:after, #btnRight1:after{
+	background:url(../images/r-arr.png) center center no-repeat;
+}
+#btnClose:after, #btnClose1:after{
+	background:none;
+}
+
+
+.imageBox1 {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	/*border:1px solid #aaa;*/
+	/*background: #fff;*/
+    overflow: hidden;
+	background-repeat: no-repeat;
+	cursor:move;
+}
+.imageBox1 .thumbBox1{
+	position: absolute;
+	top: 30%;
+	left: 20%;
+	width: 1280px;
+	height: 350px;
+	margin-top: -100px;
+	margin-left: -100px;
+	border: 1px solid rgb(102, 102, 102);
+	box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.5);
+	background: none repeat scroll 0% 0% transparent;
+}
+.imageBox1 .spinner {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	text-align: center;
+	line-height: 400px;
+	background: rgba(0,0,0,0.9);
+}
+.action1 {
+	width: 97%;
+	height: 30px;
+	margin: 20px;
+	position:absolute;
+	top:0;
+}
+.cropped1>img {
+	margin-bottom: 5px;
+	width:200px;
+}
+.cropped1{
+	margin-bottom: 5px;
+}
+.pop1 {
+	position: absolute;
+	z-index: 999;
+	width:100%;
+	height:1000px;
+	/*background-color: #ccc;*/
+	top:0;
+	left:0;
+}
+.croppings1{
+	border-bottom:1px dashed #878787;
+	background:url(../images/drop-icon.png)100% 50% no-repeat;
+	margin:0 0 20px 0;
+	height:50px;
+	position:relative;
+	overflow:hidden
+}
+.fileload1{
+	width:100%;
+	background:none;
+	border:none;
+	position:absolute;
+}
+.brows-butt1 input[type="file"]{
+	-webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+	  opacity:0;
+}
+.brows-butt1{
+	background:url(../images/choose.png) 0 0 no-repeat;
+	cursor:pointer;
+	float:left;
+	width:50%;
+}
+.button-crop1{
+	float:right;
+}
+.button-crop1 input{
+	width:40px;
+	background:#2dc3e8;
+	border:none;
+	border-radius:7px;
+	position:relative;
+	z-index:1;
+}
+.btnCrop1, .btnzoom1, .btnzoomo1{ position:relative;}
+.btnCrop1:after, .btnzoom1:after, .btnzoomo1:after{
+	position:absolute;
+	width:40px;
+	height:40px;
+	content:'';
+	left:0;
+	background:url(../images/crop.png) center center no-repeat;
+	cursor:pointer;
+	top:0;
+	z-index:1;
+}
+.btnzoom1:after{
+	background:url(../images/zoom1.png) center center no-repeat;
+}
+.btnzoomo1:after{
+	background:url(../images/zoom2.png) center center no-repeat;
+}
+
+.imageBox .thumbBox.banner {
+  width: 1280px;
+  height: 200px;
+  margin-top: -100px;
+  margin-left: -640px;
+}
+
+/* submit or crop button at bottom , named as 'OK'
+ * 'banner' height is now 200px, (previous : 380px) 
+ * As per the requirement doc on 24/01/2018 
+ * link:: https://docs.google.com/document/d/1xHhhiZoqWJZDLR42cUBc0j0NZaKA9xgDbTW-yb-T9AM/edit?ts=5a67fa2b	
+ *
+ * As this part is only for desktop view, this part is going to be under media query for desktop version
+ */
+@media (min-width: 768px) {
+
+.buttonCrop.deskVersion { 
+	border:0px solid #000; background-color:#2dc3e8; color:#fff; width:60px; height:30px; border-radius: 8px; padding: 0 5px;
+/* absolute attibutes for making it middle bottom of the cropped area */
+	position: absolute; top:250px; left:0; right: 0; bottom: 0; margin: auto;
+ }
+ .buttonCrop.deskVersion.banner {top:270px;}
+
+/* this bellow button is for mobile only, so this is going to be hidden*/
+ .buttonCrop.mobileVersion {display: none;}
+}
+/* ------// requirement for 24/01/2018 ends here ----- */
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {    
+	.btnCrop:after, .btnzoom:after, .btnzoomo:after, .btnCrop1:after, .btnzoom1:after, .btnzoomo1:after, #btnTop:after, #btnDown:after, #btnLeft:after, #btnRight:after, #btnTop1:after, #btnDown1:after, #btnLeft1:after, #btnRight1:after{
+		height:20px;
+	}
+}
+
+
+@media all and (-ms-high-contrast:none)
+     {
+     .foo { color: green } /* IE10 */
+     *::-ms-backdrop, .foo { color: red } /* IE11 */
+	 
+	 .btnCrop:after, .btnzoom:after, .btnzoomo:after, .btnCrop1:after, .btnzoom1:after, .btnzoomo1:after, #btnTop:after, #btnDown:after, #btnLeft:after, #btnRight:after, #btnTop1:after, #btnDown1:after, #btnLeft1:after, #btnRight1:after{
+		background-position:0 -8px;
+	}
+	*::-ms-backdrop, .btnCrop:after, .btnzoom:after, .btnzoomo:after, .btnCrop1:after, .btnzoom1:after, .btnzoomo1:after, #btnTop:after, #btnDown:after, #btnLeft:after, #btnRight:after, #btnTop1:after, #btnDown1:after, #btnLeft1:after, #btnRight1:after{
+		background-position:0 -8px;
+	}
+     }
+
+
+
+@-moz-document url-prefix() {
+	 .btnCrop:after, .btnzoom:after, .btnzoomo:after, .btnCrop1:after, .btnzoom1:after, .btnzoomo1:after, #btnTop:after, #btnDown:after, #btnLeft:after, #btnRight:after, #btnTop1:after, #btnDown1:after, #btnLeft1:after, #btnRight1:after{
+		height:20px; } 
+} 
+
+@media (max-width: 1400px) {
+.imageBox1 .thumbBox1{
+	width:90%;
+	left:12%;
+}
+}
+
+@media (max-width: 1023px) {
+.imageBox1 .thumbBox1{
+	width:100%;
+	left:15%;
+}
+}
+
+@media (max-width: 991px) {
+.action, .arrows, .arrows1{
+	margin:10px auto;
+	left:0;
+	right:0;
+}
+.imageBox1 .thumbBox1{
+	left:15%;
+}
+.action1{
+	width:96%;
+}
+}
+@media (max-width: 767px) {
+.brows-butt{
+	height:50px;
+}
+.btnCrop:after, .btnzoom:after, .btnzoomo:after, #btnTop:after, #btnDown:after, #btnLeft:after, #btnRight:after, #btnTop1:after, #btnDown1:after, #btnLeft1:after, #btnRight1:after{
+	/*top:-3px;*/
+}
+}

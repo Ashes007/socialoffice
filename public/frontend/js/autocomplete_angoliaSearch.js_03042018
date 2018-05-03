@@ -1,0 +1,32 @@
+/* Downloaded from https://www.codeseek.co/ */
+'use strict';
+
+//for autocomplete
+var client = algoliasearch('YSH65GN3MY', '909af66ddb45355625135f076718476b');
+var index = client.initIndex('TAWASUL');
+var html = '';
+autocomplete('#aa-search-input', { hint: true }, [
+  {
+    source: autocomplete.sources.hits(index, { hitsPerPage: 5 }),
+    displayKey: 'employeeName',
+    templates: {
+      suggestion: function(suggestion) {
+        
+        return '<div class="'+suggestion.alpha+' employeeSearch" onclick="location.href=\''+USER_PROFILE_URL+suggestion.objectID+'\'"><div class="emDirectory-block-single"><div class="blockSingle-img"><img src="'+USER_IMAGE_URL+suggestion.profile_photo+'" alt=""></div><div class="blockSingleCont"><h2>'+suggestion._highlightResult.employeeName.value+' <br> <span>'+suggestion.designation+'</span> </h2></div></div></div>';
+      }
+    }
+  }
+]).on('autocomplete:selected', function(event, suggestion, dataset) {
+
+  //$('#search-input').val(suggestion.employeeName);
+
+  // var html = '<li class="'+suggestion.alpha+'"><div class="emDirectory-block-single"><div class="emailPop"><a href="mailto:'+suggestion.email+'"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></div><div class="blockSingle-img"><img src="'+suggestion.profile_photo+'" alt=""></div><div class="blockSingleCont"><h2>'+suggestion._highlightResult.employeeName.value+' <br> <span>'+suggestion.designation+'</span> </h2><h3>'+suggestion.department+'</h3><h4><i class="fa fa-phone" aria-hidden="true"></i>'+suggestion.telno+'</h4><h4><a href="mailto:'+suggestion.email+'"><i class="fa fa-envelope-o" aria-hidden="true"></i> '+suggestion.email+'</a></h4></div></div></li>';
+
+  // $('#searchUser').html(html);
+  
+});
+
+$('.sb-icon-search').on('click',function(){
+  $('.aa-input-container').toggleClass('open');
+  $('#aa-search-input').val('');
+});

@@ -1,0 +1,391 @@
+@media (max-width: 1279px) {
+.container { width:1170px;}	
+.fixedrightbar, .fixedleftbar { width:263px;}
+.sccondbar{width:1140px; }	
+
+/*/////selfdesk_setting-notification//////////*/
+.set-block .chkbox_area{ margin-left:20px;}
+
+.left-check .chkbox_area { margin: 0 10px 0 0; width:auto;}
+.left-check { font-size:17px;}
+
+/*========= 12.09.17 ==========*/
+.request-area .left-check .chkbox_area { width:47%}
+.request-area .left-check .chkbox_area label { font-size:13px; line-height:25px!important;}
+}
+
+@media (max-width: 1199px) {
+  .container{ width: 970px;}
+  .login-box{ width: 55%;}
+  
+/*//////home page start//////////*/
+.fixedrightbar { width:213px;} 
+.fixedleftbar { width:293px;} 
+.recent-block { padding-right:35px; padding-left:0px;}
+.recent-block .image-div, .recent-block .image-div img { width:25px; height:25px;}
+.recent-block h4 { line-height:25px;}
+.recent-block .image-div { right:0;}
+.recent-block h3, .recent-block h3 a { font-size:13px; line-height:18px;}
+/*//////home page end//////////*/
+.sccondbar{width:940px; }
+
+.friends-area .col-sm-2 { width:25%;}
+.search-part-friend input { width:92%;}
+
+.ebookarea .ebook-img { height:auto;}
+.ebook-txt { padding:15px; margin:-30px 15px 0;}
+.ebookarea .ebook-txt h3 { font-size:18px;}
+.ebookarea .ebook-txt { min-height:120px;}
+.normbutton { font-size:14px;}
+.search-part { width:250px;}
+
+
+.listings .col-sm-3 { width:33.33%;}
+.nav-side-menu li { font-size:12px;}
+.nav-side-menu li a i { padding-right:15px;}
+.new-request ul li .recent-block{ padding:0 10px 0 40px;}
+
+.left-check { float:none; display:block; font-size:16px;} 
+
+.custom-table.table > tbody > tr > td { font-size:13px;}
+
+/*//////////////12-09-17///////////*/
+.cont-wrap-main .recent-block{ min-height:45px;}
+
+/*========= 12.09.17 ==========*/
+.request-area .left-check { width:100%}
+.request-area .left-check .chkbox_area { width:47%}
+.request-area .left-check.big-sen .chkbox_area { width:50%}
+.custom-table.table > tbody > tr > td { font-size:13px;}
+
+.top-nav ul li { margin:5px 5px 0 0;}
+
+}
+
+@media (min-width: 992px){
+.modal-xl {
+    width: 990px;
+}
+}
+
+@media (max-width: 991px) {
+  .container{ width: 750px;}
+  .login-box{ width: 85%;}
+  .search-part{ margin-right:0;}
+  
+/*//////home page start//////////*/
+.top-nav ul li a { font-size:12px;}
+.top-nav ul li, .lang { margin-left:0px;}
+.search-part { width:180px;}
+.recent-block h3, .recent-block h3 a { font-size:11px;}
+.fixedrightbar{ width:157px;}
+.fixedleftbar { width:220px;}
+/*//////home page end//////////*/
+.sccondbar{width:720px; }
+.friends-area .col-sm-2 { width:33.33%;}
+.search-part-friend input { width:89%;}
+
+
+.group-img { height:auto}
+.group-img .small-img { width:60px;}
+
+#videoiframe { height:165px;}
+.comment-other-single p { font-size:13px;}
+.comment-other-single h2 span { display:block; padding:5px 0 0; float:none;}
+
+.sl-txt h2 { font-size:25px;}
+.sl-txt { padding:15px;}
+
+.right-sidebar .cont-wrap .normbutton{ font-size:12px; padding:4px;}
+
+#uploadphoto .modal-body, #formdate .modal-body { padding:15px;}
+.form-select { width:145px;}
+.two-row .form-group:nth-child(2), .form-group .locate { width:57%;}
+.third-row .form-group {margin-left:0px;}
+.third-row .form-group:nth-child(2) { width:27%; margin-left:5px;}
+.datetimepickerarea { width:140px; margin-left:5px;}
+.third-row .form-group:nth-child(2) input {width:41%;}
+
+.pdf-area h2 { font-size:17px;}
+.listings .col-sm-3 { width:50%;}
+
+.right-area .col-sm-4 { width:50%; float:left;}
+/* user-directory */
+.user-table .table{ width:1000px; max-width: inherit;}
+/* user-directory */
+
+.new-request ul li{ overflow:hidden; padding:5px 10px;}
+/*.nav-func{ position:relative; top:0; right:auto; left:0;}*/ /*=========== 12.09.17 ===============*/
+.new-request ul{ margin-bottom:0;}
+.new-request .nav-func ul li{ padding:0; margin-left:0; margin-right:5px;}
+
+.timline-txt{ width:110px;}
+
+.third-area .btn-select { min-width:250px;}
+.point-title { font-size:25px;}
+
+/*=============== 12.09.17 =================*/
+.custom-table.table > tbody > tr > td { font-size:12px;}
+.right-area h2 { font-size:18px;}
+.new-request ul li { position:relative;}
+.new-request ul li .nav-func { opacity:0; transition: all 0.6s ease; position:absolute; right:0; top:0px; transition: all 0.6s ease;}
+.new-request ul li:hover .nav-func{ background:#fff; opacity:1; transition: all 0.6s ease; top:10px;}
+	
+.search-part { margin-left:10px; width:170px;}
+.lang { margin-right:10px;}
+.notification-div .dropdown-menu { width:400px;}
+
+.fileContainer { font-size:11px;}
+	
+}
+
+@media (min-width: 767px) {
+  .nav-side-menu .menu-list .menu-content {
+    display: block;
+  }
+  /*///////////12-09-2018/////*/
+  .ebook-left-sidebar h2 span{ opacity:0;}
+}
+
+@media (max-width: 767px) {
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9 {float:none;}
+	
+  .container{ width: 100%;}
+  .login-box{ width: 90%; padding: 15px;}
+  .copyright{ border-top: 12px solid #e9eaee; height: auto;}
+  .login-wrap{ height: 100vh;}
+  .container.cent-vertically{ position:inherit; top: inherit; -webkit-transform: translateY(0); -ms-transform: translateY(0); transform: translateY(0); padding-top: 15px; padding-bottom: 15px;}
+  
+/*//////home page start//////////*/
+.logo { text-align:center;}
+.lang { float:none; text-align:center;}
+.top-nav ul li, .lang { margin:3px;}
+.top-wrapper { position: relative;}
+.top-nav { float:none; text-align:center; }
+.top-nav ul li {display:inline-block; float:none;}
+.notification-div { float:right; margin-top:-25px; margin-right:0px; z-index:99999; position: relative;}
+.notification-div .dropdown-menu { width:290px; right:0px;}
+.notification-div .dropdown-menu:after{right: 6px;}
+.notification-div .dropdown-menu:before{right: 4px;}
+.search-part { width:230px; margin-left:0;}
+.home-container { padding-top:20px;}
+.recent-block { padding-right:60px;}
+.recent-block .image-div, .recent-block .image-div img { width:50px; height:50px;}
+.left-sidebar { margin-bottom:20px;}
+.postedTime-image img { width:100%;}
+.footer {text-align:center;}
+.recent-block h3, .recent-block h3 a { font-size:14px; line-height:20px;}
+.recentUpdates { margin-bottom:20px;}
+
+.fixedrightbar, .fixedleftbar { position:relative; top:0; width:100%;}
+.fixedleftbar .profile-image-block  { display: block;}
+.search-part { width:30px; height:32px; margin-top:-25px; position:relative;}
+
+.sb-search.sb-search-open, .no-js .sb-search { width:230px!important; position:absolute; left:0; top:0;}
+
+/*//////home page end//////////*/   
+ 
+ .fixme { position:relative; width:100%; top:0px;}
+ .timeline-nav { height:40px;}
+ 
+ .count-area li { width:30%; padding:10px 5px; font-size:25px;}
+ .count-area li span {font-size:14px;}
+ .box-area { padding:15px;}
+ 
+ .friends-area .col-sm-2 { width:33.33%; float:left;}
+ .search-part-friend { position:relative; width:100%; margin:15px 0 4px;}
+ .search-part-friend i { float:right; margin:8px 5px;}
+ 
+ .fc-header tr td { display: block; text-align:left; padding:10px 10px 0;}
+ .fc-header tr td.fc-header-right { padding-top:0px;}
+ .calendar-heading .col-sm-8 { float:left;}
+ .calendar-heading h2 { font-size:25px;}
+ .photo-single img { width:100%;}
+ #exTab2 .nav-tabs li { width:auto;}
+ 
+ #videoiframe { height:250px;}
+ .ebookarea .ebook-txt { min-height:20px;}
+ .owl-nav { display:none;} 
+ #Carousel-1 .owl-dots { bottom:5px;}
+ 
+ .right-sidebar .cont-wrap .normbutton { padding:7px 10px; font-size:13px;}
+ .likeComment p { text-align:left;}
+ .group-tag h2 { font-size:20px;}
+ .profile-image-block { padding:15px;}
+ 
+ .top-wrapper .container {width:320px;}
+ 
+ /*//////selfdesk sidebar//////////*/
+ .nav-side-menu {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .nav-side-menu .toggle-btn {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    z-index: 10 !important;
+    padding: 2px;
+    background-color: #ffffff;
+    color: #000;
+    width: 40px;
+    text-align: center;
+  }
+  
+  .brand {
+    text-align: left !important;
+    font-size: 22px;
+    padding-left: 20px;
+    line-height: 50px !important;
+  }
+  
+  
+  .listings .col-sm-3 { float:left;}
+  .ebookmenu { width:100%;}
+  .sorting label, .sorting ul li { font-size:13px; padding-right:5px;}
+  #exTab2 .nav-tabs2 li a {padding: 10px 20px;}
+  button.alt { left: -5px; top:-10px;}
+  
+  .selfdesk { padding-top:25px;}
+  .nav-side-menu li { font-size:14px;}
+  .nav-side-menu li a i { padding-right:20px;}
+  .right-area h3.cat-title {font-size:18px;}
+  .fancy-collapse-panel .panel-heading a {font-size:15px;}
+  
+  .new-request ul li .recent-block {
+    padding: 0 10px 0 60px;
+   }
+   
+   .left-mess .timline-txt{ display:none;}
+   .left-mess{ width:auto;}
+   .message-butt a label{ display:none;}
+   .right-mess{ width:95%;}
+   
+   .menu-list { margin:0px;}
+   .set-block { padding:10px;}
+   .set-block .chkbox_area { width:30px;}
+   .set-block .chkbox_area input[type="checkbox"]:not(old) + label { padding:0 0 16px 30px;}
+   .custom-fancy-collapse-panel.fancy-collapse-panel .panel-heading a { font-size:15px;}
+   
+.inputfile + label{ max-width:100%!important;}
+.inputfile-6 + label strong { text-align:center;}
+
+h3.tickets { padding:10px 0 15px;}
+.second-area h3 { font-size:18px;}
+.btn-select { min-width:50px;}
+
+/*///////////12-09-2018/////*/
+.timeline-nav{ padding:24px 0; background:#fff;}
+.cmn-toggle-switch{ top:13px;}
+.center-icon .cmn-toggle-switch{ left:46%;}
+.timeline-nav .fileContainer{ margin-top:-17px; margin-left:8px;}
+.ebook-left-sidebar h2 span{ float:right;}
+.cat-list{ display:none;}
+
+/*=============== 12.09.17 ==============*/
+.pdf-icon { margin-top:10px;}
+.custom-table.table > tbody > tr > td { font-size:14px;}
+
+/******************** calender-highlights ************************/
+  .tabs3 {width: 100%;float: none;}
+  .grn-cal{ margin-top:0px; margin-bottom:10px; float: none;}
+  
+  .cont-wrap-main .recent-block{ min-height:70px;}
+ .recent-block h4 { line-height:50px;}
+}
+
+@media (max-width: 639px) {
+
+ .friends-area .col-sm-2 { width:50%;}
+ .friends { height: auto;}
+ .sl-txt { display:none;}
+ 
+ .two-row label, .two-row .form-group, .two-row .form-group .locate, .third-row .form-group, .form-select, .two-row .form-group:nth-child(2), .form-group .locate, .datetimepickerarea.custom{ width:100%; display:block; float:none;}
+ .form-select, .form-group .locate { margin-left:0px;}
+ .two-row .form-group:nth-child(2) { text-align:left;}
+ 
+ #uploadphoto label, .datetimepickerarea, #uploadphoto .form-control, .third-row .form-group:nth-child(2), #formdate label, #formdate .form-control{ display:block; width:100%; margin-left:0px;}
+ .form-sub { height:40px; margin-top:0;}
+ .imageuploadify { padding:10px!important;}
+ 
+ .listings .col-sm-3 { width:100%; float:none;}
+ .img-area img { height:auto;}
+ 
+ .right-area .col-sm-4 { width:100%; float:none;}
+ .in-box h3, .right-area h2 { font-size:20px;}
+ .notify-area .notify-img { margin-right:10px;}
+ .notify-area .notify-img, .notify-area .notify-txt { float:left;}
+ .notify-area .notify-txt { width:80%;}
+ .notify-area li { overflow: hidden;}
+ 
+ .filter-area { float:none; width:100%;}
+ .filter-area label { font-size:16px;}
+ .filter-area .datetimepickerarea { display: inline-block;}
+ 
+  /*============ 12.09.17 ===========*/
+ .right-area h2 { overflow:hidden;}
+ .right-area h2 span { float:none; display:block;}
+ .right-area h2 span a.fileContainer { margin:10px 10px 0 0;}
+ 
+}
+
+@media (max-width: 567px) {
+.timeline-cont { position: relative; color:#767676; background:#fff;}
+.timeline-profile h2 { font-size:15px;}
+.timeline-profile p { font-size:14px; font-weight:normal; }
+.timeline-photo {border-bottom:1px solid #cbccd0; margin-bottom:20px;}
+#exTab2 .nav-tabs2 li a { font-size:13px; padding:10px;}
+.fc-view{ width:700px;}
+.fc-content{ overflow-x:auto;}
+.fc-border-separate tr.fc-last th{ line-height:30px;}
+
+/*/////selfdesk_setting-notification//////////*/
+.block-txt{ width:83%;}
+
+}
+
+@media (max-width: 479px) {
+
+ .friends-area .col-sm-2 { width:100%; float:none;}
+  #videoiframe { height:150px;}
+  .post-timeline textarea { height:40px; font-size:13px;}
+  #exTab2 .nav-tabs2 li { width:100%; text-align: right;}
+  #exTab2 .nav-tabs2 li a{margin-right:0px; padding:7px 10px;}
+  
+  
+  .imageuploadify .imageuploadify-images-list { padding:10px;}
+  .chkbox_area { width: auto;}
+  .imageuploadify .imageuploadify-images-list span.imageuploadify-message { font-size:18px!important;}
+  .imageuploadify .imageuploadify-images-list .imgicon { margin-top:0px!important;}
+  .imageuploadify { min-height:30px!important;}
+  .timeline-cont { padding:10px;}
+  
+  .fancy-collapse-panel .img-sec, .fancy-collapse-panel .helptxt{ display:block; width:auto; margin-right:0; margin-bottom:5px;}
+  .right-area h2 span { float:none; display:block;}
+  .right-area h2 span a.fileContainer { float:none; display: inline-block; margin:10px 0 0;}
+  
+  .point-title { font-size:16px;}
+  .point-title img { width:25px; margin-right:5px;}
+  .point-title span { width:80px; height:80px; line-height:80px; right: -20px;}
+  .medel-in { padding:10px;}
+  .medel-area {margin-top:10px; margin-bottom:20px;}
+  
+  .fileContainer { margin-top:10px;}
+  .filter-area label { display: block; padding-bottom:10px;}
+  .filter-area .datetimepickerarea { width:49%;}
+  
+  /*============ 12.09.17 =============*/
+  .request-area .left-check .chkbox_area { width:100%; margin:0 0 10px;}
+  .request-area .left-check .btn-select { width:65%;}
+  .set-area .form-control, .set-area .btn-select, .request-area .left-check.big-sen .chkbox_area { width:100%;}
+  .timelineBlock:hover .nav-func { background:#fff;}
+  .request-area .chkbox_area input[type="checkbox"]:not(old) + label { margin-left:-26px;}
+  .sending, .request-area .left-check .btn-select { float: left;}
+  .request-area .left-check .btn-select { margin-right:5px;}
+	
+
+
+}

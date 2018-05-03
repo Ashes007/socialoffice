@@ -1,0 +1,87 @@
+<?php
+
+return [
+
+    'footer_txt'   	                => 'Copyright © Shurooq - All rights reserved',
+    'post'         	                => 'Post',
+    'learn_more'	                => 'Learn More',
+    'no_friend_found'	            => 'No Friend Found',
+    'what_is_in_your_mind'          => "What's on your mind today?",
+    'like'                          => 'Like',
+    'likes'                         => 'Likes',
+    'comment'                       => 'Comment',
+    'comments'                      => 'Comments',
+    'press_enter_to_post_comment'   =>  'Press Enter to post comment',
+    'no_updates' 	                => 'No Updates',
+    'select_date'                   => 'Select Date',
+    'select_month'                  => 'Select Month',
+    'select'                        => 'Select',
+    'search'                        => 'Search', 
+    'description'                   => 'Description',
+    'action'                        => 'Action',
+    'attending'                     => 'Attending',
+    'not_attending'                 => 'Not Attending',
+    'be_the_first_one_to_post_here' => 'Stay Tuned for Upcoming Announcements',
+    'press_enter_to_post_comment'   => 'Press enter to post comment',
+    'pending'                       => 'Pending',
+    'employee'                      => 'Employee',
+    'uploaded_image_size_maximum_2MB_allowed'
+                                    => 'Uploaded image size maximum 2MB allowed',
+    'only_JPEG_JPG_PNG_are_allowed' => 'Only JPEG, JPG, PNG are allowed.',
+    
+    'please_upload_image_file_with_width_greater_than_1280px_and_height_greater_than_382px'
+                                    => 'Please upload image file with width greater than 1250px and height greater than 200px',
+
+    'Please_upload_image_file_with_width_greater_than_1280px_and_height_greater_than_382px_and_maximum_file_size_2MB' 
+                                    => 'Please upload image file with width greater than 1250px and height greater than 200px and maximum file size 2MB',
+
+    'Please_upload_image_file_with_width_less_than_300px_and_height_less_than_300px'
+                                    =>'Please upload image file with width less than 300px and height less than 300px',
+
+    'Please_upload_image_file_with_width_less_than_300px_and_height_less_than_300px_and_maximum_file_size_2MB'
+                                    =>'Please upload image file with width less than 300px and height less than 300px and maximum file size 2MB',
+
+    'drag_and_drop_your_files_here_or'      => 'Drag &amp; Drop your files here! or',
+    'Please_upload_a_perfect_squre_image'   =>'Please upload a perfect square image',
+    'browse'                        => 'browse',
+    'thank_you'                     => 'Thank You',
+    'ended'                         => 'Ended',
+    'started'                       => 'Started',
+    'start'                         => 'Start',
+    'allday_event'                  => 'All Day Event',
+    'load_more'                     => 'Load More',
+    'News_Feed'                     => 'News Feed',
+    'Events'                        => 'Events',
+    'Employee_Directory'            => 'Employee Directory',
+    'Groups'                        => 'Groups',
+    'From_date'                     => 'From date',
+    'End_Date'                      => 'End Date',
+    'cancel'                        => 'Cancel',
+    'or'                            => 'or',
+    'press'                         => 'Press',
+    'enter'                         => 'ENTER',
+    'proceed'                       => 'Proceed',
+    'Confirm'                       => 'Confirm',
+    'Alert'                         => 'Alert!',
+    'Okay'                          => 'Okay',    
+    'no_data_available'             =>'No data Available',
+    'invitation_success_msg'        =>'Invitation Sent Successfully',
+    'unable_to_access'              =>'Sorry Unable to access!',
+    'active'                        => 'Active',
+    'ago'                           => 'ago',
+    'days'                          => 'days',
+    'months'                        => 'months',
+    'weeks'                         => 'weeks',
+    'has_been_deleted_on'           =>'has been deleted on',
+    'today'                         =>'today',
+    'about'                         =>'about',
+    'congratulations'               =>'Congratulations',
+    'congratulate'                  =>'Congratulate',
+    'send'                          => 'Send',
+    'timeline'                      => 'timeline',
+    'wish'                          => 'Wish',
+    'a'                             =>'a',
+    'footer_text'                   =>'Copyright © Shurooq - All rights reserved',
+    'Max_length_150_characters'     =>' Max length 150 characters',
+
+];

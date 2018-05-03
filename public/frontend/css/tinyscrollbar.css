@@ -1,0 +1,100 @@
+#scrollbar1, #scrollbar2, #scrollbar3, #scrollbar4
+{
+    width:90%;
+    margin:20px auto 10px;
+    position: relative;
+}
+#scrollbar3, #scrollbar4{width:98vw; margin:0; position:fixed; right:20px;}
+@media (max-width: 991px) {
+	#scrollbar3, #scrollbar4{width:97vw;}
+}
+@media (max-width: 639px) {
+	#scrollbar3, #scrollbar4{width:93vw;}
+}
+
+#scrollbar1 .viewport, #scrollbar2 .viewport, #scrollbar3 .viewport, #scrollbar4 .viewport
+{
+    height: 630px;
+    overflow:hidden;
+    position:relative;
+}
+.occasion #scrollbar1{
+	width:95%;
+}
+.occasion #scrollbar1 .viewport{
+	height:270px;
+}
+.occasion #scrollbar1 .overview{
+	width:100%;
+}
+#scrollbar3 .viewport, #scrollbar4 .viewport{ height:100vh;}
+
+.event-side #scrollbar1 .viewport{height: 595px;}
+
+#scrollbar1 .overview, #scrollbar2 .overview, #scrollbar3 .overview, #scrollbar4 .overview
+{
+    list-style:none;
+    position:absolute;
+    left:0;
+    top:0;
+    margin:0;
+    padding: 10px 20px;
+	width:100%;
+}
+#scrollbar3 .overview, #scrollbar4 .overview{ padding:0; right:0;}
+
+#scrollbar1 .scrollbar, #scrollbar2 .scrollbar, #scrollbar3 .scrollbar, #scrollbar4 .scrollbar
+{
+    background:transparent url(../images/bg-scrollbar-track-y.png) no-repeat 0 0;
+    position:absolute;
+    background-position:0 0;
+    right: -20px;
+    top:0;
+    width:15px;
+}
+
+
+
+#scrollbar1 .track, #scrollbar2 .track, #scrollbar3 .track, #scrollbar4 .track
+{
+    /*background:transparent url(../images/bg-scrollbar-trackend-y.png) no-repeat 0 100%;*/
+    height:100%;
+    width:13px;
+    position:relative;
+    padding:0 1px;
+}
+
+#scrollbar1 .thumb, #scrollbar2 .thumb, #scrollbar3 .thumb, #scrollbar4 .thumb
+{
+    background:transparent url(../images/bg-scrollbar-thumb-y.png) no-repeat 50% 100%;
+    height:20px;
+    width:25px;
+    cursor:pointer;
+    overflow:hidden;
+    position:absolute;
+    top:0;
+    left:-5px;
+}
+
+#scrollbar1 .thumb .end, #scrollbar2 .thumb .end, #scrollbar3 .thumb .end, #scrollbar4 .thumb .end
+{
+    background:transparent url(../images/bg-scrollbar-thumb-y.png) no-repeat 50% 0;
+    overflow:hidden;
+    height:5px;
+    width:25px;
+}
+
+#scrollbar1 .disable, #scrollbar2 .disable, #scrollbar3 .disable, #scrollbar4 .disable
+{
+    display:none;
+}
+
+.noSelect
+{
+    user-select:none;
+    -o-user-select:none;
+    -moz-user-select:none;
+    -khtml-user-select:none;
+    -webkit-user-select:none;
+}
+

@@ -1,0 +1,94 @@
+@php
+    $group_type = $group_details->group_type_id;
+    $comm_share_permission_actv_grp = Auth::user()->can('comment-share-activity-group'); 
+    $comm_share_permission_global_grp = Auth::user()->can('comment-share-global-group');
+    $comm_share_permission_dept_grp = Auth::user()->can('comment-share-departmental-group'); 
+    $post_permission_global_group =Auth::user()->can('post-global-group');
+    $post_permission_departmental_group =Auth::user()->can('post-departmental-group');
+    $post_permission_activity_group =Auth::user()->can('post-activity-group');
+
+    $like_permission_global_group =Auth::user()->can('like-global-group');
+    $like_permission_departmental_group =Auth::user()->can('like-departmental-group');
+    $like_permission_activity_group =Auth::user()->can('like-activity-group');
+
+    if($group_type==1) { $permission_share =$comm_share_permission_global_grp;} elseif($group_type==2){ $permission_share = $comm_share_permission_dept_grp;} elseif($group_type==3){ $permission_share = $comm_share_permission_actv_grp;}
+
+    if($group_type==1) { $permission_like =$like_permission_global_group;} elseif($group_type==2){ $permission_like = $like_permission_departmental_group;} elseif($group_type==3){ $permission_like = $like_permission_activity_group;}
+@endphp         
+
+@if(count($group_posts)>0)
+@foreach($group_posts as $post)
+  <div class="timelineBlock" >
+    <div class="time-postedBy">
+      <div class="image-div">
+      <?php if(file_exists( public_path('uploads/user_images/profile_photo/thumbnails/'.$post->profile_photo) )&& ($post->profile_photo!='' || $post->profile_photo!=NULL)) {?>
+      <img src="{{ asset('uploads/user_images/profile_photo/thumbnails/').'/'.$post->profile_photo }}"/>
+      <?php }else{ ?>
+      <img src="{{ asset('uploads/no_img.png') }}"/>
+      <?php  } ?>
+      </div>
+      <h2><a href="{{URL::Route('user_profile').'/'.($post->ad_username)}}">{{$post->display_name}}</a></h2>
+      <p>{{$post->location}} @if($post->location!='') - @endif {{date('F d, Y',strtotime($post->created_at))}}</p>
+    </div>
+    <div class="postedTime-image">
+    <?php if(file_exists( public_path('uploads/post_images/'.$post->image) )&& ($post->image!='' || $post->image!=NULL)) {?>
+    <img src="{{ asset('uploads/post_images/').'/'.$post->image }}" width="799"/>
+    <?php }?>               
+    <h2>{{$post->text}}</h2>
+    <input type="hidden" value="{{$post->id}}" class="piscls" alt="{{$post->id}}" id="pid_{{$post->id}}" />
+    </div>
+    <div class="likeComment">
+      <div class="row">
+        <div class="col-sm-5">
+          @if($permission_like==1)
+          @if(is_liked_post(\Auth::guard('user')->user()->id,$post->id)==1)
+          <?php $cls = 'active_lk'; ?>
+          @else
+          <?php $cls = ''; ?>
+          @endif
+          <button class="face-like {{$cls}}"  type="button" id="lkid_{{$post->id}}" alt="{{$post->id}}" name="button"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> {{ __('common.like')}}</button>
+          @endif
+        </div>
+        <div class="col-sm-7">
+          <p><a  class='cntlikecls' href="{{URL::Route('likelist').'/'.$post->id.'/'.$group_encode_id}}"><span id="likecnt_id_{{$post->id}}" class="likecls">{{count($post->likes)}} {{ __('common.likes')}} </span></a>- <a href="javascript:void(0);" class="user-com" data-target="{{$post->id}}" id="cmncnt_id_{{$post->id}}">{{count($post->comments)}} {{ __('common.comments')}}</a></p>
+          <input type="hidden" value="{{count($post->comments)}}" id="cmntid_{{$post->id}}" />
+          <input type="hidden" value="{{count($post->likes)}}" id="likeid_{{$post->id}}" />
+        </div>
+      </div>
+    </div>
+    <div class="comment-other">
+      @if(count($post->comments))   <?php  $i = 0; ?>           
+      @foreach($post->comments as $comment) <?php $i ++; ?>
+      @if($i==1 && count($post->comments)>1)<div id="comment_{{$post->id}}" style="display:none;">@endif
+      <div class="comment-other-single">
+      <div class="image-div">
+      @if($comment->user->profile_photo != NULL && file_exists(public_path('uploads/user_images/profile_photo/thumbnails/' . $comment->user->profile_photo)))
+      <img src="{{ asset('uploads/user_images/profile_photo/thumbnails/'.$comment->user->profile_photo) }}" alt=""/>
+      @else
+      <img src="{{ asset('uploads/no_img.png') }}" alt="">
+      @endif     </div>
+      <h2><a href="{{URL::Route('user_profile').'/'.($comment->user->ad_username)}}">{{ $comment->user->display_name }}</a> <span>{{ \DateTime::createFromFormat('Y-m-d H:i:s', $comment->created_at)->format('dS M Y h:i A') }}</span></h2>
+      <p>{{$comment->body}}</p>
+      </div>
+      @if($i==(count($post->comments)-1)) </div> @endif
+      @endforeach                
+      @endif
+      <div id="commentsnwid_{{$post->id}}">
+      </div> 
+    </div>
+    @if($permission_share==1 ) 
+    <div class="comment-field">
+      <div class="image-div">
+        @if(\Auth::guard('user')->user()->profile_photo != NULL && file_exists(public_path('uploads/user_images/profile_photo/thumbnails/' . \Auth::guard('user')->user()->profile_photo)))
+        <img src="{{ asset('uploads/user_images/profile_photo/thumbnails/'.\Auth::guard('user')->user()->profile_photo) }}" alt=""/>
+        @else
+        <img src="{{ asset('uploads/no_img.png') }}" alt=""/>
+        @endif                      
+      </div> 
+                     
+      <textarea id="commentid_{{$post->id}}" alt="{{$post->id}}" class="cmntcls" name="comment_text" placeholder="{{ __('common.press_enter_to_post_comment')}}"></textarea>                 
+    </div>
+     @endif
+  </div>
+@endforeach            
+@endif

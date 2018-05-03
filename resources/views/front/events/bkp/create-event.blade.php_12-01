@@ -1,0 +1,665 @@
+@extends('front.layout.event_app')
+@section('title','Tawasul')
+@section('content')
+<div class="home-container createEventPopup">
+        <section class="createEventSection">
+            <div class="createEventSection-close">
+                <a href="{{ URL::Route('event','month')}}">Cancel
+                    <img src="{{ asset('frontend/images/btn-cancel.png')}}" alt="">
+                </a>
+            </div>
+
+            <div class="container nonRelative">
+                <!-- ========= Create Event Circle Container Start ========= -->
+
+            <div class="msg">{{ Session::get('success') }}</div>
+
+                <div class="fullHeight formstartContainer startForm">
+
+
+
+                    <div class="absCont">
+                        <div class="fixedfull"></div>
+                        <div class="ceCircle">
+                            <div class="cirlePoint">
+                                <div class="cirlePointInn"></div>
+                            </div>
+                            <div class="ceTitle">Create Event</div>
+                        </div>
+                        <!-- ========= Start Container Start ========= -->
+                        <div class="startContainer">
+
+                            <h1>Start!</h1>
+                            <div class="proceedContainer">
+                                <h5>
+                                    <a href="javascript:void(0)" id="formStart" class="ceBtnBlue pOSval">Proceed</a> or
+                                    <span class="pressText">Press</span> ENTER</h5>
+                                <input type="text" style="width: 0;height: 0;border: none;" id="formstart" autofocus />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- ========= Type Form Container Start ========= -->
+                <div class="typeFormContainer">
+                    <div class="formContainerInn ">
+
+
+                        <form method="post" action="{{ URL::Route('add_event') }}" class="typeForm" name="eventForm" id="eventForm" enctype = "multipart/form-data" >
+                        {{ csrf_field() }}
+                            <ul class="formList mainForm">
+                                <li class="formSection formInit">
+                                    <div class="inputTitle">
+                                        <span class="numberText">1</span> What is your
+                                        <span class="textOne">Event Name</span>? *</div>
+                                    <div class="inputField">
+                                        <input id="eventName" name="eventName"  type="text" class="formTextField enterinput" placeholder="">
+                                    </div>
+                                    <div class="proceedContainer spaceOne">
+                                        <h5>
+                                            <a href="javascript:void(0)" id="proceedFirst" class="ceBtnBlue proceedToNext">Proceed</a> or
+                                            <span class="pressText">Press</span> ENTER</h5>
+                                    </div>
+                                </li>
+                                <li class="formSection formMove">
+                                    <div class="inputTitle">
+                                        <span class="numberText">2</span> Can you provide a
+                                        <span class="textOne">Cover Image</span> for your Event? *</div>
+                                    <div class="inputField">
+                                        <!-- <div class="browseContainer">
+                                            <p>Drag &amp; Drop your files here! or
+                                                <input id="upload" type="file" />
+                                                <label for="upload">browse</label>
+                                            </p>
+                                        </div> -->
+
+                                        <div class="fiLeCustom">
+                                            <label for="file-upload" class="custom-file-upload">Drag &amp; Drop your files here! or
+                                                <strong>browse</strong>
+                                            </label>
+                                            <input id="file-upload" name='upload_cont_img' type="file">
+                                        </div>
+
+
+                                    </div>
+                                    <button class="thisishidden">click on form</button>
+                                </li>
+                                <li class="formSection formMove">
+                                    <div class="inputTitle">
+                                        <span class="numberText">3</span>Write something about your
+                                        <span class="textOne">event</span>? *</div>
+                                    <div class="inputField textareaOnly">
+                                        <textarea name="description" id="description" class="formTextField textareaField enterinput" rows=""></textarea>
+                                    </div>
+                                    <div class="proceedContainer spaceOne">
+                                        <h5>
+                                            <a href="javascript:void(0)" class="ceBtnBlue proceedToNext">Proceed</a> or
+                                            <span class="pressText">Press</span> ENTER</h5>
+                                    </div>
+                                    <button class="thisishidden">click on form</button>
+                                </li>
+                                <li class="formSection formMove">
+                                    <div class="inputTitle">
+                                        <span class="numberText">4</span> You
+                                        <span class="textOne">Creating</span> a? * </div>
+                                    <div class="inputField eventType">
+                                        <ul>
+                                            <li class="eventOne eventTypeId" data-typeid="1">
+                                                <h3>Global
+                                                    <br>Event</h3>
+                                            </li>
+                                            <li class="eventTwo eventTypeId" data-typeid="2">
+                                                <h3>Departmental
+                                                    <br>Event</h3>
+                                            </li>
+                                            <li class="eventThree eventTypeId" data-typeid="3">
+                                                <h3>Activity
+                                                    <br>Event</h3>
+                                            </li>
+                                        </ul>
+                                        <input type="hidden" name="event_type" id="event_type">
+                                    </div>
+                                    <button class="thisishidden">click on form</button>
+                                </li>
+                                <li class="formSection formMove noAuto">
+                                    <div class="inputTitle">
+                                        <span class="numberText">5</span> Where are you
+                                        <span class="textOne">conducting</span> your Event? *</div>
+                                    <div class="inputField withArr">
+                                        <input class="chosen-value formTextField" id="autocomplete" name="location" onFocus="geolocate()" type="text">
+                                        <ul class="value-list">
+                                            <!-- <li>Alabama</li>
+                                            <li>Alaska</li>
+                                            <li>California</li>
+                                            <li>Colorado</li>
+                                            <li>Delaware</li>
+                                            <li>Florida</li>
+                                            <li>Georgia</li>
+                                            <li>Hawaii</li>
+                                            <li>Indiana</li>
+                                            <li>Iowa</li>
+                                            <li>Kansas</li>
+                                            <li>Kentucky</li>
+                                            <li>Louisiana</li>
+                                            <li>Maine</li>
+                                            <li>Maryland</li>
+                                            <li>New Jersey</li>
+                                            <li>New York</li>
+                                            <li>Ohio</li>
+                                            <li>Oklahoma</li>
+                                            <li>Pennsylvania</li>
+                                            <li>Rhode Island</li>
+                                            <li>South Carolina</li>
+                                            <li>South Dakota</li>
+                                            <li>Tennessee</li>
+                                            <li>Texas</li>
+                                            <li>Utah</li>
+                                            <li>Vermont</li>
+                                            <li>Virginia</li>
+                                            <li>Washington</li>
+                                            <li>West Virginia</li>
+                                            <li>Wisconsin</li>
+                                            <li>Wyoming</li> -->
+                                        </ul>
+                                    </div>
+                                    <button class="thisishidden">click on form</button>
+                                </li>
+                                <li class="formSection formMove">
+                                    <div class="inputTitle">
+                                        <span class="numberText">6</span> When you are
+                                        <span class="textOne">planning</span> to conduct the event? *</div>
+                                    <div class="spaceOne">
+                                        <div class="datepickerTheme" id="datetimepicker1">
+                                            <div class="dateHeader">
+                                                <div class="clWeek">Start Date</div>
+                                                <div class="clDay" id="hidden-val1"></div>
+                                            </div>
+                                            <input type="hidden" name="date" id="my_hidden_input1" value="">
+                                            <input type="hidden" name="event_start_date" id="event_start_date" >
+                                            <input type="hidden" name="event_end_date" id="event_end_date" >
+                                        </div>
+                                        <div class="datepickerTheme" id="datetimepicker2">
+                                            <div class="dateHeader">
+                                              <div class="clWeek">End Date</div>
+                                              <div class="clDay" id="hidden-val2"></div>
+                                            </div>
+                                            <input type="hidden" name="date" id="my_hidden_input2" value="">
+                                        </div>
+                                    </div>
+                                    <button class="thisishidden">click on form</button>
+                                </li>
+                                <!-- <li class="formSection formMove">
+                                    <div class="inputTitle"><span class="numberText">7</span> Is it a <span class="textOne">full day event?</span> *</div>
+                                    <div class="inp-custom">
+                                        <input id="check-1" type="checkbox" name="" value="">
+                                        <label for="check-1"></label>
+                                    </div>
+                                    <button class="thisishidden">click on form</button>
+                                </li> -->
+
+                                <li class="formSection formMove">
+                                    <div class="inputTitle">
+                                        <span class="numberText">7</span> What is the
+                                        <span class="textOne">Start & End</span> time of the event? *
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="input-custom">
+                                            <!-- <input id="check-1" type="checkbox" name="" value=""> -->
+                                            <input id="checktime" name="allday_event" type="hidden">
+                                            <div class="col-md-6">
+                                                <!-- <div class="inp-custom">
+                                           <label for="check-1"></label>
+                                           <span class="qFday"> Is it a full day event? - <span class="textOne">OR</span> -</span>
+                                       </div> -->
+
+                                                <div class="inp-custom">
+                                                    <span class="typeTxt"></span>
+                                                    <span class="qFday"> Is it a full day event? -
+                                                        <span class="textOne">OR</span> -</span>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-md-6 timer">
+                                                <div class="spMb">
+                                                    <div class="datepickerTheme forDate" id="datetimepicker3">
+                                                        <div class="tmTxT">Start Time</div>
+                                                    </div>
+                                                    <div class="datepickerTheme forDate" id="datetimepicker4">
+                                                        <div class="tmTxT">End Time</div>
+                                                    </div>
+
+                                                    <input type="hidden" name="start_time" id="start_time">
+                                                    <input type="hidden" name="end_time" id="end_time">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <button class="thisishidden">click on form</button>
+                                </li>
+
+                                <!--   <li data-pos="last">
+                                    <div class="inputTitle"><span class="numberText">9</span> Who will be <span class="textOne">attending</span> the events? *</div>
+                                    <div class="inputField withArr">
+                                        <input class="chosen-value formTextField" type="text">
+                                        <ul class="value-list">
+                                            <li>Alabama</li>
+                                            <li>Alaska</li>
+                                            <li>California</li>
+                                            <li>Colorado</li>
+                                            <li>Delaware</li>
+                                            <li>Florida</li>
+                                            <li>Georgia</li>
+                                            <li>Hawaii</li>
+                                            <li>Indiana</li>
+                                            <li>Iowa</li>
+                                            <li>Kansas</li>
+                                            <li>Kentucky</li>
+                                            <li>Louisiana</li>
+                                            <li>Maine</li>
+                                            <li>Maryland</li>
+                                            <li>New Jersey</li>
+                                            <li>New York</li>
+                                            <li>Ohio</li>
+                                            <li>Oklahoma</li>
+                                            <li>Pennsylvania</li>
+                                            <li>Rhode Island</li>
+                                            <li>South Carolina</li>
+                                            <li>South Dakota</li>
+                                            <li>Tennessee</li>
+                                            <li>Texas</li>
+                                            <li>Utah</li>
+                                            <li>Vermont</li>
+                                            <li>Virginia</li>
+                                            <li>Washington</li>
+                                            <li>West Virginia</li>
+                                            <li>Wisconsin</li>
+                                            <li>Wyoming</li>
+                                        </ul>
+                                    </div>
+                                    <button class="thisishidden">click on form</button>
+                                </li>-->
+
+                            </ul>
+                                <div style="display: none;"><input type="submit"></div>
+                                <div class="subMit-bottom">
+                            <div class="container">
+                                <div class="proceedContainer">
+                                    <h5>
+                                        <!--<a href="group.html" class="ceBtnBlue">Proceed</a>--><input type="submit" value="Proceed" class="ceBtnBlue"> or
+                                        <span class="pressText" id="submitpresstxt">Press</span> ENTER</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- <div class="subMit-bottom">
+                <div class="container">
+                    <div class="proceedContainer">
+                        <h5>
+                            <a class="ceBtnBlue" href="javascript:void(0);" id="proceed">Proceed</a> or
+                            <span class="pressText">Press</span> ENTER</h5>
+                    </div>
+                </div>
+            </div> -->
+        </section>
+    </div>
+
+@endsection
+
+@section('script')
+<script src="{{ asset('frontend/js/moment.js') }}"></script>
+<script src="{{ asset('frontend/js/bootstrap-datetimepicker.min.js') }}"></script>
+<script src="{{ asset('frontend/js/index.js') }}"></script>
+
+
+
+<script src="{{ asset('frontend/js/typescript.js') }}"></script>
+<script type="text/javascript">
+        $(function () {
+            $('#datetimepicker1, #datetimepicker2').datetimepicker({
+                inline: true,
+                format: 'DD/MM/YYYY'
+            });
+
+            $('#datetimepicker1').on('dp.change', function (event) {
+                $('#selected-date1').text(event.date);
+                var formatted_date = event.date.format('DD');
+                $('#my_hidden_input1').val(formatted_date);
+                $('#hidden-val1').text($('#my_hidden_input1').val());
+                var event_start_date = event.date.format('YYYY/MM/DD');
+                $('#event_start_date').val(event_start_date);
+            });
+            $("#datetimepicker1").find(".dateHeader").html();
+
+            // added new - 12/01/2018
+            $('#datetimepicker2').on('dp.change', function (event) {
+                $('#selected-date2').text(event.date);
+                var formatted_date = event.date.format('DD');
+                $('#my_hidden_input2').val(formatted_date);
+                $('#hidden-val2').text($('#my_hidden_input2').val());
+            });
+            $("#datetimepicker2").find(".dateHeader").html();
+            // added new - 12/01/2018
+
+            $('#datetimepicker3, #datetimepicker4').datetimepicker({
+                inline: true,
+                format: 'LT'
+                //format: 'HH:mm'
+            });
+
+
+
+            $('#datetimepicker3').on('dp.change', function (event) {
+            console.log(event.date);
+                var start_time = event.date.format('HH:mm');
+                $('#start_time').val(start_time);
+            });
+            $('#datetimepicker4').on('dp.change', function (event) {
+                var end_time = event.date.format('HH:mm');
+                $('#end_time').val(end_time);
+            });
+
+
+            $('.eventTypeId').click(function(){
+                $('.eventTypeId').removeClass('active');
+                $(this).addClass('active');
+                var typeid = $(this).attr('data-typeid');
+                $('#event_type').val(typeid);
+            });
+
+        });
+
+
+
+        $('#file-upload').change(function () {
+
+                var totalFile = this.files.length;
+                for (var i = 0; i < totalFile; i++) {
+
+                      var fileInfo = this.files[i];
+                      var sizeKB = fileInfo.size / 1000;
+                      sizeKB  = sizeKB.toFixed(1);
+                      if(sizeKB > 2048)
+                      {
+                        $.alert({
+                                    title: 'Alert!',
+                                    content: 'Uploaded image size maximum 2MB allowed',
+                                    icon: 'fa fa-rocket',
+                                    type: 'blue',
+                                    animation: 'scale',
+                                    closeAnimation: 'scale',
+                                    animateFromElement: false,
+                                    buttons: {
+                                        okay: {
+                                        text: 'Okay',
+                                        btnClass: 'btn-blue'
+                                        }
+                                    }
+                                });
+
+
+                        $(this).val('');
+                        return false;
+                      }
+
+                      var fileType = fileInfo["type"];
+                      var ValidImageTypes = ["image/jpg", "image/jpeg", "image/png"];
+                      if ($.inArray(fileType, ValidImageTypes) < 0) {
+
+                            $.alert({
+                                    title: 'Alert!',
+                                    content: 'Only JPEG, JPG, PNG are allowed.',
+                                    icon: 'fa fa-rocket',
+                                    type: 'blue',
+                                    animation: 'scale',
+                                    closeAnimation: 'scale',
+                                    animateFromElement: false,
+                                    buttons: {
+                                        okay: {
+                                        text: 'Okay',
+                                        btnClass: 'btn-blue'
+                                        }
+                                    }
+                                });
+
+                            $(this).val('');
+                            return false;
+                      }
+
+                }
+
+
+
+            var i = $(this).prev('label').clone();
+            var file = $('#file-upload')[0].files[0].name;
+            $(this).prev('label').text(file);
+        });
+        $(".fixedfull").click(function () {
+            $("#formstart").focus();
+        });
+        $(".typeTxt").click(function (e) {
+            e.stopPropagation();
+            $(this).toggleClass('active');
+            $(".timer").toggle();
+            // $("#checktime").
+            var hiddenField = $('#checktime'),
+                val = hiddenField.val();
+            hiddenField.val(val === "true" ? "false" : "true");
+        });
+
+        $('#proceed').click(function(){
+            $('#eventForm').submit();
+        });
+
+        $("#eventForm").on('submit',(function(e){
+
+                $eventName = $('#eventName').val();
+                if($eventName == '')
+                {
+                    $.alert({
+                        title: 'Alert!',
+                        content: 'Please give an event name ',
+                        icon: 'fa fa-rocket',
+                        type: 'blue',
+                        animation: 'scale',
+                        closeAnimation: 'scale',
+                        animateFromElement: false,
+                        buttons: {
+                            okay: {
+                            text: 'Okay',
+                            btnClass: 'btn-blue'
+                            }
+                        }
+                    });
+                    $('#eventName').focus();
+                    return false;
+                }
+
+                $event_type = $('#event_type').val();
+                if($eventName == '')
+                {
+                    $.alert({
+                        title: 'Alert!',
+                        content: 'Please select an event type ',
+                        icon: 'fa fa-rocket',
+                        type: 'blue',
+                        animation: 'scale',
+                        closeAnimation: 'scale',
+                        animateFromElement: false,
+                        buttons: {
+                            okay: {
+                            text: 'Okay',
+                            btnClass: 'btn-blue'
+                            }
+                        }
+                    });
+                    $('#event_type').focus();
+                    return false;
+                }
+
+                $event_start_date = $('#event_start_date').val();
+                if($event_start_date == '')
+                {
+                    $.alert({
+                        title: 'Alert!',
+                        content: 'Please choose event start date',
+                        icon: 'fa fa-rocket',
+                        type: 'blue',
+                        animation: 'scale',
+                        closeAnimation: 'scale',
+                        animateFromElement: false,
+                        buttons: {
+                            okay: {
+                            text: 'Okay',
+                            btnClass: 'btn-blue'
+                            }
+                        }
+                    });
+                    return false;
+                }
+
+                $event_end_date = $('#event_end_date').val();
+                if($event_end_date == '')
+                {
+                    $.alert({
+                        title: 'Alert!',
+                        content: 'Please choose event end date',
+                        icon: 'fa fa-rocket',
+                        type: 'blue',
+                        animation: 'scale',
+                        closeAnimation: 'scale',
+                        animateFromElement: false,
+                        buttons: {
+                            okay: {
+                            text: 'Okay',
+                            btnClass: 'btn-blue'
+                            }
+                        }
+                    });
+                    return false;
+                }
+
+                // $start_time = $('#start_time').val();
+                // if($start_time == '')
+                // {
+                //     $.alert({
+                //         title: 'Alert!',
+                //         content: 'Please choose event start time',
+                //         icon: 'fa fa-rocket',
+                //         type: 'blue',
+                //         animation: 'scale',
+                //         closeAnimation: 'scale',
+                //         animateFromElement: false,
+                //         buttons: {
+                //             okay: {
+                //             text: 'Okay',
+                //             btnClass: 'btn-blue'
+                //             }
+                //         }
+                //     });
+                //     return false;
+                // }
+
+                // $end_time = $('#end_time').val();
+                // if($end_time == '')
+                // {
+                //     $.alert({
+                //         title: 'Alert!',
+                //         content: 'Please choose event end time',
+                //         icon: 'fa fa-rocket',
+                //         type: 'blue',
+                //         animation: 'scale',
+                //         closeAnimation: 'scale',
+                //         animateFromElement: false,
+                //         buttons: {
+                //             okay: {
+                //             text: 'Okay',
+                //             btnClass: 'btn-blue'
+                //             }
+                //         }
+                //     });
+                //     return false;
+                // }
+
+
+         }));
+
+        // $("#eventForm").on('submit',(function(e){
+        //           e.preventDefault();
+
+        //             $.ajax({
+        //                 'type'  : 'post',
+        //                 'data'  : new FormData(this),
+        //                 'url'   : BASE_URL+'/add-event',
+        //                 contentType: false,
+        //                 cache: false,
+        //                 processData:false,
+        //                 'success': function(msg){
+        //                         console.log(msg);
+        //                 }
+        //           });
+        //       }));
+
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5PfRGTq6z6QS3DW7pS3L6AVvUupeadNY&libraries=places&callback=initAutocomplete"
+        async defer></script>
+    <script type="text/javascript">
+              // This example displays an address form, using the autocomplete feature
+      // of the Google Places API to help users fill in the information.
+
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+      var placeSearch, autocomplete;
+      var componentForm = {
+        street_number: 'short_name',
+        route: 'long_name',
+        locality: 'long_name',
+        administrative_area_level_1: 'short_name',
+        country: 'long_name',
+        postal_code: 'short_name'
+      };
+
+      function initAutocomplete() {
+        // Create the autocomplete object, restricting the search to geographical
+        // location types.
+        autocomplete = new google.maps.places.Autocomplete(
+            /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
+            {types: ['geocode']});
+
+        // When the user selects an address from the dropdown, populate the address
+        // fields in the form.
+        //autocomplete.addListener('place_changed', fillInAddress);
+      }
+
+      // Bias the autocomplete object to the user's geographical location,
+      // as supplied by the browser's 'navigator.geolocation' object.
+      function geolocate() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var geolocation = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+            var circle = new google.maps.Circle({
+              center: geolocation,
+              radius: position.coords.accuracy
+            });
+            autocomplete.setBounds(circle.getBounds());
+          });
+        }
+      }
+    </script>
+
+@endsection

@@ -1,0 +1,27 @@
+<div class="col-lg-3 col-sm-4">
+           <div class="left-sidebar">
+             <div class="profile-image-block">
+               <div class="profile-image">
+               @if(\Auth::guard('user')->user()->profile_photo != NULL && file_exists(public_path('uploads/user_images/profile_photo/thumbnails/' . \Auth::guard('user')->user()->profile_photo)))
+                    <img src="{{ asset('uploads/user_images/profile_photo/thumbnails/'.\Auth::guard('user')->user()->profile_photo) }}" alt=""/>
+                  @else
+                  <img src="{{ asset('frontend/images/no_user_thumb.png') }}" alt=""/>
+                  @endif
+               </div>
+               <h2>{{ \Auth::guard('user')->user()->display_name }}</h2>
+               <p>
+                 {{ \Auth::guard('user')->user()->designation->name }} <br> 
+                {{ \Auth::guard('user')->user()->department->name }}
+               </p>
+             </div>
+             <div class="side-nav">
+               <ul>
+                 <li class="active"><a href="{{ URL::Route('home')}}"><i class="fa fa-user" aria-hidden="true"></i> News feed</a></li>
+                 <li><a href="{{ URL::Route('event','today')}}"><i class="fa fa-calendar" aria-hidden="true"></i> Events</a></li>
+                 <li><a href="{{ URL::Route('user_directory')}}"><i class="fa fa-handshake-o" aria-hidden="true"></i> Employee Directory</a></li>
+                 <li><a href="{{ URL::Route('group')}}"><i class="fa fa-users" aria-hidden="true"></i> Groups</a></li>
+                 <!--<li><a href="occasions.html"><i class="fa fa-sign-language" aria-hidden="true"></i> Occasions</a></li>-->
+               </ul>
+             </div>
+           </div>
+         </div>

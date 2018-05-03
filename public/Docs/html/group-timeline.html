@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <link rel="shortcut icon" href="images/favicon.png">
+    <title>Tawasul : Group</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/menu.css" rel="stylesheet">
+    <link href="css/custom_responsive.css" rel="stylesheet">
+    
+    <!------Photo upload-------->
+    <link href="css/imageuploadify.min.css" rel="stylesheet">
+    
+    <!------for search area-------->
+    <link rel="stylesheet" type="text/css" href="css/component.css" />
+	<script src="js/modernizr.custom.js"></script>
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+   <div class="top-wrapper">
+     <div class="container">
+      <div class="row">
+        <div class="col-sm-3">
+           <div class="logo">
+             <a href="home.html"><img src="images/logo.png" alt=""></a>
+           </div>
+        </div>
+        <div class="col-sm-9">
+          
+          <div class="lang">
+          	<ul>
+            	<li class="active"><a href="#"><img src="images/flag.jpg" alt=""/> En</a></li>
+                <li>/</li>
+                <li><a href="#"><img src="images/flag1.jpg" alt=""/> Ar</a></li>
+            </ul>
+          </div>
+          
+          <div class="top-nav">
+            <ul>
+              <li><a href="home.html">Home</a></li>
+              <li><a href="selfdesk-mytickets.html">Self Desk</a></li>
+              <li><a href="#">Logout</a></li>
+            </ul>
+          </div>
+          
+          <div class="notification-div dropdown">
+            <span class="noti-icon dropdown-toggle" id="notific" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="fa fa-bell" aria-hidden="true"></i></span>
+            <div class="dropdown-menu" aria-labelledby="notific">
+              <div class="notific-top">
+                <p>Notification</p>
+              </div>
+              <div class="notific-cont">
+               <div class="notific-cont-single">
+                 <div class="notific-img-user"><img src="images/followers-1.jpg" alt=""></div>
+                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                 <p class="posted-time"><i class="fa fa-calendar" aria-hidden="true"></i> Yesterday at 1.36pm</p>
+               </div>
+               <div class="notific-cont-single">
+                 <div class="notific-img-user"><img src="images/followers-2.jpg" alt=""></div>
+                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                 <p class="posted-time"><i class="fa fa-calendar" aria-hidden="true"></i> Yesterday at 1.36pm</p>
+               </div>
+               <div class="notific-cont-single">
+                 <div class="notific-img-user"><img src="images/followers-3.jpg" alt=""></div>
+                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                 <p class="posted-time"><i class="fa fa-calendar" aria-hidden="true"></i> Yesterday at 1.36pm</p>
+               </div>
+               <div class="notific-cont-single">
+                 <div class="notific-img-user"><img src="images/followers-4.jpg" alt=""></div>
+                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                 <p class="posted-time"><i class="fa fa-calendar" aria-hidden="true"></i> Yesterday at 1.36pm</p>
+               </div>
+               <div class="notific-cont-single">
+                 <div class="notific-img-user"><img src="images/followers-5.jpg" alt=""></div>
+                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                 <p class="posted-time"><i class="fa fa-calendar" aria-hidden="true"></i> Yesterday at 1.36pm</p>
+               </div>
+               <div class="notific-cont-single">
+                 <div class="notific-img-user"><img src="images/followers-6.jpg" alt=""></div>
+                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                 <p class="posted-time"><i class="fa fa-calendar" aria-hidden="true"></i> Yesterday at 1.36pm</p>
+               </div>
+              </div>
+              <div class="notific-bottom text-center"><a href="#">View All</a></div>
+            </div>
+          </div>
+          
+          <div class="search-part">
+          <div id="sb-search" class="sb-search">
+						<form>
+							<input class="sb-search-input" placeholder="Search..." type="text" value="" name="search" id="search">
+							<input class="sb-search-submit" type="submit" value="">
+							<span class="sb-icon-search"></span>
+						</form>
+					</div>
+          </div>
+          
+        </div>
+      </div>
+     </div>
+   </div>
+
+   <div class="home-container">
+     <div class="container">
+
+       <div class="timeline-photo">
+         <img src="images/timeline-photo.jpg" alt="">
+         <div class="timeline-cont">
+           <div class="row">
+             <div class="col-sm-8">
+               <div class="timeline-profile">
+                 <div class="image-div"><img src="images/avatar-male.jpg" alt=""></div>
+                 <h2>Mahendra Kakumanu</h2>
+                 <p>@Mahendra.k</p>
+               </div>
+             </div>
+             <div class="col-sm-4">
+               <div class="followmenu dropdown">
+                 <button class="dropdown-toggle" type="button" id="followT" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Following <span class="caret"></span></button>
+                 <ul class="dropdown-menu" aria-labelledby="followT">
+                   <li><a href="#">Private Message</a></li>
+                   <li><a href="#">Unfollow</a></li>
+                 </ul>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+
+	   <div class="fixme">
+
+       <div class="timeline-nav clearfix">
+         <a class="cmn-toggle-switch cmn-toggle-switch__htx open_close" href="javascript:void(0);"><span>Menu mobile</span></a>
+                    <div class="main-menu">
+                        <div id="header_menu">
+                            <img src="images/logo.png" alt="" data-retina="true">
+                        </div>
+                        <a href="#" class="open_close" id="close_in"><i class="fa fa-times" aria-hidden="true"></i></a>
+                        
+                        <ul>
+                            <li><a href="timeline-user.html">Timeline</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="friends-timeline.html">Friends</a></li>
+                            <li class="active"><a href="group-timeline.html">Group</a></li>
+                            <li><a href="calendar-highlights-today.html">Event</a></li>
+                            <li><a href="photo.html">Photos</a></li>
+                            <li><a href="videos.html">Videos</a></li>
+                            <li><a href="ebook-timeline.html">Ebook</a></li>
+                        </ul>
+                        </div><!-- End main-menu -->
+         <label class="fileContainer">
+    	 <a data-toggle="modal" data-target="#uploadphoto" href="#">Create Group <i class="fa fa-users" aria-hidden="true"></i></a>
+		</label>
+       </div>
+       
+       </div>
+       
+       <div id="exTab2">	
+       <ul class="nav nav-tabs nav-tabs2">
+			<li class="active">
+            <a  href="#1" data-toggle="tab">All Group </a>
+			</li>
+			<li><a href="#2" data-toggle="tab">Global Group </a>
+			</li>
+			<li><a href="#3" data-toggle="tab">Departmental Group </a>
+			</li>
+            <li><a href="#4" data-toggle="tab">Other Group </a>
+			</li>
+		</ul>
+
+			<div class="tab-content cal-con grop-time ">
+			  <div class="tab-pane active" id="1">
+                <div class="row">
+         
+         		<div class="col-sm-4 col-xs-6">
+           <div class="photo-single group-areas">
+             <div class="group-img">
+             	<img src="images/group-img1.jpg" alt="" class="big-img"/>
+                <img src="images/sg-1.jpg" alt="" class="small-img"/>
+             </div>
+             <h3><a href="group.html">Photography</a></h3>
+             <h5>10 members</h5>
+             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore ...</p>
+             <span class="week-active">Active 2 weeks ago / <label>All Group</label></span>
+           </div>
+         </div>
+         
+         		<div class="col-sm-4 col-xs-6">
+           <div class="photo-single group-areas">
+             <div class="group-img">
+             	<img src="images/group-img2.jpg" alt="" class="big-img"/>
+                <img src="images/sg-2.jpg" alt="" class="small-img"/>
+             </div>
+             <h3><a href="group.html">Photography</a></h3>
+             <h5>10 members</h5>
+             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore ...</p>
+             <span class="week-active">Active 2 weeks ago / <label>All Group</label></span>
+           </div>
+         </div>
+         
+         		<div class="col-sm-4 col-xs-6">
+           <div class="photo-single group-areas">
+             <div class="group-img">
+             	<img src="images/group-img3.jpg" alt="" class="big-img"/>
+                <img src="images/sg-3.jpg" alt="" class="small-img"/>
+             </div>
+             <h3><a href="group.html">Photography</a></h3>
+             <h5>10 members</h5>
+             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore ...</p>
+             <span class="week-active">Active 2 weeks ago / <label>All Group</label></span>
+           </div>
+         </div>
+         
+         		<div class="col-sm-4 col-xs-6">
+           <div class="photo-single group-areas">
+             <div class="group-img">
+             	<img src="images/group-img4.jpg" alt="" class="big-img"/>
+                <img src="images/sg-4.jpg" alt="" class="small-img"/>
+             </div>
+             <h3><a href="group.html">Photography</a></h3>
+             <h5>10 members</h5>
+             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore ...</p>
+             <span class="week-active">Active 2 weeks ago / <label>All Group</label></span>
+           </div>
+         </div>
+         
+         		<div class="col-sm-4 col-xs-6">
+           <div class="photo-single group-areas">
+             <div class="group-img">
+             	<img src="images/group-img5.jpg" alt="" class="big-img"/>
+                <img src="images/sg-5.jpg" alt="" class="small-img"/>
+             </div>
+             <h3><a href="group.html">Photography</a></h3>
+             <h5>10 members</h5>
+             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore ...</p>
+             <span class="week-active">Active 2 weeks ago / <label>All Group</label></span>
+           </div>
+         </div>
+         
+         		<div class="col-sm-4 col-xs-6">
+           <div class="photo-single group-areas">
+             <div class="group-img">
+             	<img src="images/group-img6.jpg" alt="" class="big-img"/>
+                <img src="images/sg-6.jpg" alt="" class="small-img"/>
+             </div>
+             <h3><a href="group.html">Photography</a></h3>
+             <h5>10 members</h5>
+             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore ...</p>
+             <span class="week-active">Active 2 weeks ago / <label>All Group</label></span>
+           </div>
+         </div>
+         
+         
+                 </div>
+				</div>
+                
+                
+				<div class="tab-pane" id="2">
+         			<div class="row">
+         
+         		<div class="col-sm-4">
+           <div class="photo-single group-areas">
+             <div class="group-img">
+             	<img src="images/group-img3.jpg" alt="" class="big-img"/>
+                <img src="images/sg-3.jpg" alt="" class="small-img"/>
+             </div>
+             <h3><a href="group.html">Photography</a></h3>
+             <h5>10 members</h5>
+             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore ...</p>
+             <span class="week-active">Active 2 weeks ago / <label>Global Group </label></span>
+           </div>
+         </div>
+         
+         		<div class="col-sm-4">
+           <div class="photo-single group-areas">
+             <div class="group-img">
+             	<img src="images/group-img4.jpg" alt="" class="big-img"/>
+                <img src="images/sg-4.jpg" alt="" class="small-img"/>
+             </div>
+             <h3><a href="group.html">Photography</a></h3>
+             <h5>10 members</h5>
+             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore ...</p>
+             <span class="week-active">Active 2 weeks ago / <label>Global Group </label></span>
+           </div>
+         </div>
+         
+         		<div class="col-sm-4">
+           <div class="photo-single group-areas">
+             <div class="group-img">
+             	<img src="images/group-img5.jpg" alt="" class="big-img"/>
+                <img src="images/sg-5.jpg" alt="" class="small-img"/>
+             </div>
+             <h3><a href="group.html">Photography</a></h3>
+             <h5>10 members</h5>
+             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore ...</p>
+             <span class="week-active">Active 2 weeks ago / <label>Global Group </label></span>
+           </div>
+         </div>
+         
+         		<div class="col-sm-4">
+           <div class="photo-single group-areas">
+             <div class="group-img">
+             	<img src="images/group-img6.jpg" alt="" class="big-img"/>
+                <img src="images/sg-6.jpg" alt="" class="small-img"/>
+             </div>
+             <h3><a href="group.html">Photography</a></h3>
+             <h5>10 members</h5>
+             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore ...</p>
+             <span class="week-active">Active 2 weeks ago / <label>Global Group </label></span>
+           </div>
+         </div>
+         
+         
+         
+      				</div>
+				</div>
+        
+        <div class="tab-pane" id="3">
+         	<div class="row">
+         
+         	<div class="col-sm-4">
+           <div class="photo-single group-areas">
+             <div class="group-img">
+             	<img src="images/group-img3.jpg" alt="" class="big-img"/>
+                <img src="images/sg-3.jpg" alt="" class="small-img"/>
+             </div>
+             <h3><a href="group.html">Photography</a></h3>
+             <h5>10 members</h5>
+             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore ...</p>
+             <span class="week-active">Active 2 weeks ago / <label>Departmental Group </label></span>
+           </div>
+         </div>
+         
+         	<div class="col-sm-4">
+           <div class="photo-single group-areas">
+             <div class="group-img">
+             	<img src="images/group-img4.jpg" alt="" class="big-img"/>
+                <img src="images/sg-4.jpg" alt="" class="small-img"/>
+             </div>
+             <h3><a href="group.html">Photography</a></h3>
+             <h5>10 members</h5>
+             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore ...</p>
+             <span class="week-active">Active 2 weeks ago / <label>Departmental Group </label></span>
+           </div>
+         </div>
+         
+         	<div class="col-sm-4">
+           <div class="photo-single group-areas">
+             <div class="group-img">
+             	<img src="images/group-img5.jpg" alt="" class="big-img"/>
+                <img src="images/sg-5.jpg" alt="" class="small-img"/>
+             </div>
+             <h3><a href="group.html">Photography</a></h3>
+             <h5>10 members</h5>
+             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore ...</p>
+             <span class="week-active">Active 2 weeks ago / <label>Departmental Group </label></span>
+           </div>
+         </div>
+         
+         
+             </div>
+				</div>
+                
+        <div class="tab-pane" id="4">
+         			<div class="row">
+         
+         		<div class="col-sm-4">
+           <div class="photo-single group-areas">
+             <div class="group-img">
+             	<img src="images/group-img3.jpg" alt="" class="big-img"/>
+                <img src="images/sg-3.jpg" alt="" class="small-img"/>
+             </div>
+             <h3><a href="group.html">Photography</a></h3>
+             <h5>10 members</h5>
+             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore ...</p>
+             <span class="week-active">Active 2 weeks ago / <label>Other Group </label></span>
+           </div>
+         </div>
+         
+         
+         		<div class="col-sm-4">
+           <div class="photo-single group-areas">
+             <div class="group-img">
+             	<img src="images/group-img5.jpg" alt="" class="big-img"/>
+                <img src="images/sg-5.jpg" alt="" class="small-img"/>
+             </div>
+             <h3><a href="group.html">Photography</a></h3>
+             <h5>10 members</h5>
+             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore ...</p>
+             <span class="week-active">Active 2 weeks ago / <label>Other Group </label></span>
+           </div>
+         </div>
+         
+         		<div class="col-sm-4">
+           <div class="photo-single group-areas">
+             <div class="group-img">
+             	<img src="images/group-img6.jpg" alt="" class="big-img"/>
+                <img src="images/sg-6.jpg" alt="" class="small-img"/>
+             </div>
+             <h3><a href="group.html">Photography</a></h3>
+             <h5>10 members</h5>
+             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore ...</p>
+             <span class="week-active">Active 2 weeks ago / <label>Other Group </label></span>
+           </div>
+         </div>
+         
+         
+         
+      				</div>
+				</div>        
+                
+			</div>
+  </div>
+
+      
+
+     </div>
+   </div>
+
+   <div class="footer">
+     <div class="container">
+       <p>Copyright © Shurooq - All rights reserved</p>
+     </div>
+   </div>
+   
+   
+   <div class="modal fade" id="uploadphoto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content alt">
+      <div class="modal-body">
+        <button type="button" class="close alt" data-dismiss="modal" aria-label="Close"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
+        <div class="row">
+          <div class="col-sm-12">
+            <h2><i class="fa fa-users" aria-hidden="true"></i> Create Group</h2>
+  <form action="/action_page.php">
+    <div class="form-group">
+      <label for="title">Group Name:</label>
+      <input type="text" class="form-control" id="title" name="title">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Upload Group Banner Image:</label>
+      <input type="file" accept=".xlsx,.xls,image/*,.doc,audio/*,.docx,video/*,.ppt,.pptx,.txt,.pdf" multiple>
+    </div>
+    
+    <div class="form-group">
+      <label for="title">Group Description:</label>
+      <input type="text" class="form-control" id="title" name="title">
+    </div>
+    
+    <div class="form-group">
+  <label for="sel1">Select list:</label>
+  <div class="form-select">
+  <div class="arrow" for="sel1"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
+  <select class="form-control" id="sel1">
+    <option>All Group</option>
+    <option>All Group2</option>
+    <option>All Group 3</option>
+    <option>All Group 4</option>
+  </select>
+  </div>
+   </div>
+    
+    
+   <div class="clearfix"></div>
+    <div class="form-sub">
+    <input type="submit" value="Create"/> <i class="fa fa-check-circle" aria-hidden="true"></i></i>
+    </div>
+  </form>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+	<a id="back-to-top" href="#" class="back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-placement="left"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
+   
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!------for search area-------->
+    <script src="js/classie.js"></script>
+		<script src="js/uisearch.js"></script>
+		<script>
+			new UISearch( document.getElementById( 'sb-search' ) );
+	</script>
+    
+    <!------Photo Upload-------->
+    
+    <script type="text/javascript" src="js/imageuploadify.min.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('input[type="file"]').imageuploadify();
+            })
+        </script>
+    
+   <!------Photo Upload-------->
+    
+    
+    <script src="js/custom.js"></script>
+  </body>
+</html>

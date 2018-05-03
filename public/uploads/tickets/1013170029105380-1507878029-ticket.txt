@@ -1,0 +1,26 @@
+$ cd myproject
+$ git init
+$ git remote add origin git@192.168.1.12:/home/matrix2016/git/tawasul.git
+
+
+git branch (show branch)
+git add . (file add to git)
+git commit -m "first commit" ( file commit to git server)
+git push 
+git pull
+
+
+merge from master (daily task) 
+-----------------------
+git checkout master
+git pull origin master
+
+git checkout abhishekdas
+git merge master
+git push origin abhishekdas
+
+push to master:
+--------------------
+git checkout master
+git merge abhishekdas
+git push origin master

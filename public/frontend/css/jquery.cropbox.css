@@ -1,0 +1,336 @@
+@charset "UTF-8";
+    .cropbox .btn-file {
+                position: relative;
+                overflow: hidden;
+            }
+            .cropbox .btn-file input[type=file] {
+                position: absolute;
+                top: 0;
+                right: 0;
+                min-width: 100%;
+                min-height: 100%;
+                font-size: 100px;
+                text-align: right;
+                filter: alpha(opacity=0);
+                opacity: 0;
+                outline: none;
+                background: white;
+                cursor: inherit;
+                display: block;
+            }
+            .cropbox .cropped {
+                margin-top: 10px;
+            }
+            .syntaxhighlighter table .container:before {
+                display: none !important;
+            }
+            
+
+
+.workarea-cropbox {
+    
+    overflow: hidden;
+    display: none;
+    position: absolute;
+    overflow: hidden;
+    display: none;
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: 500px;
+}
+
+}
+.bg-cropbox {
+    position: relative;
+    border: 1px solid #aaa;
+    overflow: hidden;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAA3NCSVQICAjb4U/gAAAABlBMVEXMzMz////TjRV2AAAACXBIWXMAAArrAAAK6wGCiw1aAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M26LyyjAAAABFJREFUCJlj+M/AgBVhF/0PAH6/D/HkDxOGAAAAAElFTkSuQmCC");
+}
+.membrane-cropbox {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: move;
+}
+.frame-cropbox {
+    position: absolute;
+    box-sizing: border-box;
+    outline: 2px solid #999;
+    cursor: move;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    min-width: 16px;
+    min-height: 16px;
+}
+.frame-cropbox:hover {
+    outline-color: #337ab7;
+    box-shadow: 0 0 5px 3px #2e6da4;
+}
+.image-cropbox {
+    position: relative;
+}
+.resize-cropbox {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    cursor: se-resize;
+}
+
+
+.cropbox1 .btn-file {
+                position: relative;
+                overflow: hidden;
+            }
+            .cropbox1 .btn-file input[type=file] {
+                position: absolute;
+                top: 0;
+                right: 0;
+                min-width: 100%;
+                min-height: 100%;
+                font-size: 100px;
+                text-align: right;
+                filter: alpha(opacity=0);
+                opacity: 0;
+                outline: none;
+                background: white;
+                cursor: inherit;
+                display: block;
+            }
+            .cropbox1 .cropped {
+                margin-top: 10px;
+            }
+            .syntaxhighlighter table .container:before {
+                display: none !important;
+            }
+            
+
+
+.workarea-cropbox1 {
+    
+    overflow: hidden;
+    display: none;
+    position: absolute;
+    overflow: hidden;
+    display: none;
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: 500px;
+}
+
+}
+.bg-cropbox1 {
+    position: relative;
+    border: 1px solid #aaa;
+    overflow: hidden;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAA3NCSVQICAjb4U/gAAAABlBMVEXMzMz////TjRV2AAAACXBIWXMAAArrAAAK6wGCiw1aAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M26LyyjAAAABFJREFUCJlj+M/AgBVhF/0PAH6/D/HkDxOGAAAAAElFTkSuQmCC");
+}
+.membrane-cropbox1 {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: move;
+}
+.frame-cropbox1 {
+    position: absolute;
+    box-sizing: border-box;
+    outline: 2px solid #999;
+    cursor: move;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    min-width: 16px;
+    min-height: 16px;
+}
+.frame-cropbox1:hover {
+    outline-color: #337ab7;
+    box-shadow: 0 0 5px 3px #2e6da4;
+}
+.image-cropbox1 {
+    position: relative;
+}
+.resize-cropbox1 {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    cursor: se-resize;
+}
+
+
+@charset "UTF-8";
+    .cropbox .btn-file {
+                position: relative;
+                overflow: hidden;
+            }
+            .cropbox .btn-file input[type=file] {
+                position: absolute;
+                top: 0;
+                right: 0;
+                min-width: 100%;
+                min-height: 100%;
+                font-size: 100px;
+                text-align: right;
+                filter: alpha(opacity=0);
+                opacity: 0;
+                outline: none;
+                background: white;
+                cursor: inherit;
+                display: block;
+            }
+            .cropbox .cropped {
+                margin-top: 10px;
+            }
+            .syntaxhighlighter table .container:before {
+                display: none !important;
+            }
+            
+
+
+.workarea-cropbox {
+    
+    overflow: hidden;
+    display: none;
+    position: absolute;
+    overflow: hidden;
+    display: none;
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: 500px;
+}
+
+}
+.bg-cropbox {
+    position: relative;
+    border: 1px solid #aaa;
+    overflow: hidden;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAA3NCSVQICAjb4U/gAAAABlBMVEXMzMz////TjRV2AAAACXBIWXMAAArrAAAK6wGCiw1aAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M26LyyjAAAABFJREFUCJlj+M/AgBVhF/0PAH6/D/HkDxOGAAAAAElFTkSuQmCC");
+}
+.membrane-cropbox {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: move;
+}
+.frame-cropbox {
+    position: absolute;
+    box-sizing: border-box;
+    outline: 2px solid #999;
+    cursor: move;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    min-width: 16px;
+    min-height: 16px;
+}
+.frame-cropbox:hover {
+    outline-color: #337ab7;
+    box-shadow: 0 0 5px 3px #2e6da4;
+}
+.image-cropbox {
+    position: relative;
+}
+.resize-cropbox {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    cursor: se-resize;
+}
+
+
+.cropbox .btn-file {
+                position: relative;
+                overflow: hidden;
+            }
+            .cropbox .btn-file input[type=file] {
+                position: absolute;
+                top: 0;
+                right: 0;
+                min-width: 100%;
+                min-height: 100%;
+                font-size: 100px;
+                text-align: right;
+                filter: alpha(opacity=0);
+                opacity: 0;
+                outline: none;
+                background: white;
+                cursor: inherit;
+                display: block;
+            }
+            .cropbox .cropped {
+                margin-top: 10px;
+            }
+            .syntaxhighlighter table .container:before {
+                display: none !important;
+            }
+            
+
+
+.workarea-cropbox {
+    
+    overflow: hidden;
+    display: none;
+    position: absolute;
+    overflow: hidden;
+    display: none;
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: 500px;
+}
+
+}
+.bg-cropbox {
+    position: relative;
+    border: 1px solid #aaa;
+    overflow: hidden;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAA3NCSVQICAjb4U/gAAAABlBMVEXMzMz////TjRV2AAAACXBIWXMAAArrAAAK6wGCiw1aAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M26LyyjAAAABFJREFUCJlj+M/AgBVhF/0PAH6/D/HkDxOGAAAAAElFTkSuQmCC");
+}
+.membrane-cropbox {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: move;
+}
+.frame-cropbox {
+    position: absolute;
+    box-sizing: border-box;
+    outline: 2px solid #999;
+    cursor: move;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    min-width: 16px;
+    min-height: 16px;
+}
+.frame-cropbox:hover {
+    outline-color: #337ab7;
+    box-shadow: 0 0 5px 3px #2e6da4;
+}
+.image-cropbox {
+    position: relative;
+}
+.resize-cropbox {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    cursor: se-resize;
+}

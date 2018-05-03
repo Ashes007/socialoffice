@@ -1,0 +1,42 @@
+<?php 
+
+return [
+
+    'view_all'                                  => 'عرض الكل',
+    'recent_update'                             => 'التحديث الاخير',
+    'All_Groups'                                => 'كل المجموعات',
+    'No_Group_Unable_to_post'                   => 'لا توجد مجموعة. يتعذر النشر',
+    'Here_settings_can_be_configured'           => 'يمكن تهيئة الإعدادات هنا ...',
+    'Either_enter_text_or_select_image_file'    => 'أدخل نصا أو حدد ملف صورة',
+    'We_Look_Forward_to_your_first_post'        => 'نحن ننظر إلى الأمام إلى أول وظيفة',
+    'Global_group'                              => 'المجموعة العالمية',
+    'Departmental_group'                        => 'الإدارة',
+    'Activity_Group'                            => 'مجموعة النشاط',
+    'has_been_published'                        => 'قد تم النشر',
+    'all_day'                                   => 'طوال اليوم',
+    'posted_in'                                 => 'نشر في',
+    'having'                                    => 'وجود',
+    'birthday'                                  => 'عيد الميلاد',
+    'job_anniversary'                           =>'الذكرى الوظيفية',
+    'on'                                        =>'على',
+    'is_having'                                 =>'يملك',
+    'completed'                                 => 'منجز',
+    'years'                                     => 'سنوات',
+    'no_recent_updates'                         =>'وجه الفتاة! ليس لديك أي تحديثات حديثة!',
+    'is_having_birthday'                        => 'هو وجود عيد ميلاد',
+    'created_new_group'                         => ' إنشاء مجموعة جديدة ',
+    'created_new_event'                         => ' حدث جديد ',
+    'your_job_anniversary'                      => 'الذكرى وظيفة الخاص بك',
+    'you_wrote'                                 => 'انت كتبت',
+    'Thank_you_for_your_wish'                   =>'شكرا لتمنياتك الطيبه',
+    'Happy_Birthday'                            =>'عيد مولد سعيد',
+    'a'                                         => 'ا',
+    'Your_message_was_sent'                    => 'تم إرسال رسالتك', 
+    'Happy_Job_Anniversary'                    => 'الذكرى الوظيفية السعيدة',
+    'Employee_Directory_Search'                 => 'بحث دليل الموظفين',
+    'Employee_Directory'                        => 'دليل الموظفين',
+    'Search'                                    => 'بحث',
+    'All'                                       =>'الكل',
+    'You_can_select_only_Image_or_Video'        => 'يمكنك اختيار صورة أو فيديو فقط'    
+
+];

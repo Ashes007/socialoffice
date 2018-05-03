@@ -1,0 +1,378 @@
+<?php
+
+namespace App\Http\Controllers\admin;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
+use App\Http\Controllers\Controller;
+use App\GroupUser;
+use App\UserGroupUser;
+use App\Language;
+use App\Post;
+use App\Feed;
+use App\Comment;
+use App\Like;
+use App\GroupUserModerator;
+use App\GroupUserTranslation;
+use App\User;
+use App\GroupInvite;
+use App\Notification;
+use DB;
+use Image;
+use File;
+
+class GroupController extends Controller
+{
+    public $management = 'Group';
+    public $breadcrumb;
+    public $listMode = 'List';    
+    public $createMode = 'Add';                                
+    public $editMode = 'Edit';
+    public $listUrl = 'group_list';
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->breadcrumb = $breadcrumb = [
+                            'LISTPAGE' => 
+                                [
+                                    ['label' => 'List', 'url' => 'THIS']
+                                ],
+                            'CREATEPAGE' => 
+                                [
+                                    ['label' => $this->management.' '.$this->listMode, 'url' => \URL::route($this->listUrl)],
+                                    ['label' => 'Create', 'url' => 'THIS']
+                                ],                                 
+                            'EDITPAGE' => 
+                                [
+                                    ['label' => $this->management.' '.$this->listMode, 'url' => \URL::route($this->listUrl)],
+                                    ['label' => 'Edit', 'url' => 'THIS']
+                                ]                                
+                            ];
+
+                            \View::share([
+                                'management' => $this->management,
+                                'breadcrumb' => $this->breadcrumb,
+                            ]);
+
+                            if(\Route::current()->getActionMethod()=='index'){
+                                \View::share(['pageType' => $this->listMode]);                                
+                            }elseif(\Route::current()->getActionMethod()=='add'){
+                                \View::share(['pageType' => $this->createMode]); 
+                            }elseif(\Route::current()->getActionMethod()=='edit'){
+                                \View::share(['pageType' => $this->editMode]); 
+                            }
+    }
+
+    public function index()
+    {
+    	$data['group_list'] = GroupUser::get();
+       // dd($data['group_list']);
+        
+    	return view('admin.group.list',$data);
+    }
+
+    public function statusChange(Request $request)
+    {
+        $id = $request->id;
+        $record = GroupUser::find($id);
+        
+
+        if($record->status == 'Active')
+        {
+            $record->status = 'Inactive';
+            $status = '<span class="ion-android-close"></span>';
+            //$status = '<span class="fa fa-hourglass-start"></span>';
+
+        }
+        else
+        {
+
+            $varnew = base64_encode($id+100);
+            //$varnew = ( $var - 100 );
+            //echo $varnew;die;
+            $record->status = 'Active';
+            $status = '<span class="ion-checkmark"></span>';
+            $usrgrpusr = UserGroupUser::where('group_id',$id)->get();
+            if(!empty($usrgrpusr)){
+               foreach ($usrgrpusr as $usrgrp) {
+                
+                $groupnotification = new Notification;
+                $groupnotification->notificationable_id   = $id;
+                $groupnotification->notificationable_type = 'GroupInsert';
+                $groupnotification->text                  = 'A new group <a href="'.route('group_details').'/'.$varnew.'">'.$record->group_name.'</a> has been published on ';
+                $groupnotification->user_id               = $usrgrp->user_id;
+                $groupnotification->added_by              = $record->user_id;
+                $groupnotification->save();
+                }
+            }
+        }
+        $record->save();
+        echo $status;
+    }
+    public function add()
+    {
+        $data = array();
+        //$data['group_list'] = EventType::where('status','Active')->get();
+        return view('admin.group.add',$data);
+    }
+    public function store(Request $request)
+    {
+        $this->validate($request, [
+                'group_image'   => 'max:2000',
+                'group_image'   => 'dimensions:min_width=1250',
+                'upload_profile_img'   => 'max:2000',
+                'upload_profile_img'   => 'dimensions:max_width=300',
+                'upload_profile_img'   => 'dimensions:max_height=300',
+                'name.*'        => 'required',
+                'description.*' => 'required'
+                
+            ],
+            [
+                'group_image.max'           => 'Uploaded image size maximum 2MB allowed',
+                'group_image.dimensions'    => 'Please select atleast 1250 pixel image',
+                'upload_profile_img.max'    => 'Uploaded image size maximum 2MB allowed',
+                'upload_profile_img.dimensions'=> 'Please select maximum 300px image',
+                'upload_profile_img.dimensions'=> 'Please select maximum 300px image',
+                'name.en.required'          => 'Please enter group name for English',
+                'name.ar.required'          => 'Please enter group name for Arabic',
+                'description.en.required'   => 'Please enter group description for English',
+                'description.ar.required'   => 'Please enter group description for Arabic'
+            ]
+        );
+        $dept_id='';
+        $group_type_id     = $request->group_type_id;
+        $owner_id          = 1;
+        $group_name        = $request->name;
+        $group_description = $request->description;
+
+        $group_user = new GroupUser;
+        if(Input::hasFile('group_image')) {
+            $image = $request->file('group_image');                        
+            
+            $imagename = mt_rand(1000,9999)."_".time().".".$image->getClientOriginalExtension();
+
+            $destinationPath = public_path('uploads/group_images');
+            $thumbPath = public_path('uploads/group_images/thumb');
+            
+
+            $img = Image::make($image->getRealPath());
+            $img->resize(1280, 382, function ($constraint) {
+             //   $constraint->aspectRatio();
+            })->save($thumbPath.'/'.$imagename);  
+             $img = Image::make($image->getRealPath());
+             $img->save($destinationPath.'/'.$imagename);  
+            $group_user->cover_image = $imagename;
+           
+        }
+
+        if(Input::hasFile('upload_profile_img')) {
+            $image1 = $request->file('upload_profile_img');                        
+            
+            $imagename1 = mt_rand(100,999)."_".time().".".$image1->getClientOriginalExtension();
+
+            $destinationPath1 = public_path('uploads/group_images/profile_image/');
+            
+
+            $img1 = Image::make($image1->getRealPath());
+            
+             $img1->save($destinationPath1.'/'.$imagename1);  
+            $group_user->profile_image = $imagename1;
+           
+        }
+
+
+        $group_user->department_id = rtrim($dept_id,',');
+        $group_user->group_type_id = $group_type_id;
+        $group_user->user_id      = $owner_id;
+        $group_user->status        = $request->status;
+        $group_user->created_at   = date('Y-m-d H:i:s');
+        $group_user->save(); 
+        foreach ($this->lang_locales as $locale) {           
+            $group_user->translateOrNew($locale->code)->group_name = $request->name[$locale->code];
+            $group_user->translateOrNew($locale->code)->group_description = $request->description[$locale->code];
+        }
+
+        $group_user->save(); 
+
+
+        $feed = new Feed;
+        $feed->user_id = $owner_id;
+        $feed->feedable_id = $group_user->id;
+        $feed->type =  'Group';
+        $feed->save();
+
+        if($group_type_id==1) {
+           $users = User::select('id')->where('status','Active')->where('group_id','>',1)->get();
+            if(!empty($users)){
+                foreach($users as $user){
+                    $usergroupusr = new UserGroupUser;
+                    $usergroupusr->user_id  = $user->id;
+                    $usergroupusr->group_id = $group_user->id;
+                    $usergroupusr->save(); 
+
+
+                    $groupnotification = new Notification;
+                    $groupnotification->notificationable_id   = $group_user->id;
+                    $groupnotification->notificationable_type = 'GroupInsert';
+                    $groupnotification->text                  = ' <a href="'.route('group_details').'/'.base64_encode($group_user->id+100).'">'.group_name($group_user->id).'</a>  has been added on ';
+                    $groupnotification->user_id               = $user->id;
+                    $groupnotification->added_by              = 1;
+                    $groupnotification->save();
+                }
+            }
+        }
+        
+
+    return \Redirect::Route('group_list')->with('success', 'Group added successfully');   
+    }
+
+    public function edit($id)
+    {
+        //$data['eventtype_list'] = EventType::where('status','Active')->get();
+        $data['details'] = GroupUser::find($id);
+        //dd($data['details']);
+        return view('admin.group.edit',$data);
+    }
+
+    public function update(Request $request,$id)
+    {
+           $this->validate($request, [
+                'group_image'   => 'max:2000',
+                'group_image'   => 'dimensions:min_width=1250',
+                'upload_profile_img'   => 'max:2000',
+                'upload_profile_img'   => 'dimensions:max_width=300',
+                'upload_profile_img'   => 'dimensions:max_height=300',
+                'name.*'        => 'required',
+                'description.*' => 'required'
+                
+            ],
+            [
+                'group_image.max'           => 'Uploaded image size maximum 2MB allowed',
+                'group_image.dimensions'    => 'Please select atleast 1250 pixel image',
+                'upload_profile_img.max'    => 'Uploaded image size maximum 2MB allowed',
+                'upload_profile_img.dimensions'=> 'Please select maximum 300px image',
+                'upload_profile_img.dimensions'=> 'Please select maximum 300px image',
+                'name.en.required'          => 'Please enter group name for English',
+                'name.ar.required'          => 'Please enter group name for Arabic',
+                'description.en.required'   => 'Please enter group description for English',
+                'description.ar.required'   => 'Please enter group description for Arabic'
+            ]
+        );
+        $dept_id='';
+        $group_type_id     = $request->group_type_id;
+        $owner_id          = 1;
+        $group_name        = $request->name;
+        $group_description = $request->description;
+
+        $group_user = GroupUser::find($id);
+        
+        if(Input::hasFile('group_image')) {
+            $image = $request->file('group_image');                        
+            
+            $imagename = mt_rand(1000,9999)."_".time().".".$image->getClientOriginalExtension();
+
+            $destinationPath = public_path('uploads/group_images');
+            $thumbPath = public_path('uploads/group_images/thumb');
+            
+
+            $img = Image::make($image->getRealPath());
+            $img->resize(1280, 382, function ($constraint) {
+             //   $constraint->aspectRatio();
+            })->save($thumbPath.'/'.$imagename);  
+             $img = Image::make($image->getRealPath());
+             $img->save($destinationPath.'/'.$imagename);  
+            $group_user->cover_image = $imagename;
+
+            $file1 = 'uploads/group_images/'.$group_user->cover_image;
+            $file2 = 'uploads/group_images/thumb/'.$group_user->cover_image;
+            
+            File::delete($file1, $file2);
+           
+        }
+
+        if(Input::hasFile('upload_profile_img')) {
+            $image1 = $request->file('upload_profile_img');                        
+            
+            $imagename1 = mt_rand(100,999)."_".time().".".$image1->getClientOriginalExtension();
+
+            $destinationPath1 = public_path('uploads/group_images/profile_image/');
+            
+
+            $img1 = Image::make($image1->getRealPath());
+            
+             $img1->save($destinationPath1.'/'.$imagename1);  
+            $group_user->profile_image = $imagename1;
+            $file3 = 'uploads/group_images/profile_image/'.$group_user->profile_image;
+            File::delete($file3);
+           
+        }
+
+
+        $group_user->department_id = rtrim($dept_id,',');
+        $group_user->group_type_id = $group_type_id;
+        $group_user->user_id      = $owner_id;
+        $group_user->status        = $request->status;
+        $group_user->created_at   = date('Y-m-d H:i:s');
+        $group_user->save(); 
+        foreach ($this->lang_locales as $locale) {           
+            $group_user->translateOrNew($locale->code)->group_name = $request->name[$locale->code];
+            $group_user->translateOrNew($locale->code)->group_description = $request->description[$locale->code];
+        }
+
+        $group_user->save(); 
+
+
+       
+       $usrgrpusr = UserGroupUser::where('group_id',$id)->get();
+        if(!empty($usrgrpusr)){
+            foreach($usrgrpusr as $usrgrp) {
+                //echo $usrgrp->user_id;die;
+                $groupnotification = new Notification;
+                $groupnotification->notificationable_id   = $id;
+                $groupnotification->notificationable_type = 'GroupUpdate';
+                $groupnotification->text                  = ' <a href="'.route('group_details').'/'.base64_encode($id+100).'">'.group_name($id).'</a>  has been edited on ';
+                $groupnotification->user_id               = $usrgrp->user_id;
+                $groupnotification->added_by              = 1;
+                $groupnotification->save();
+            }
+        }
+        
+
+    return \Redirect::Route('group_list')->with('success', 'Group updated successfully');  
+    }
+
+    public function delete($id)
+    {
+        $group = GroupUser::find($id);
+       // Notification::where('notificationable_id','=',$group->id)->where('notificationable_type','=','GroupModerator')->orWhere('notificationable_type','=','GroupMember')->orWhere('notificationable_type','=','GroupUpdate')->orWhere('notificationable_type','=','GroupDelete')->orWhere('notificationable_type','=','GroupInsert')->orWhere('notificationable_type','=','GroupAccept')->orWhere('notificationable_type','=','GroupReject')->orWhere('notificationable_type','=','GroupModeratorAccept')->orWhere('notificationable_type','=','GroupModeratorReject')->delete();
+        Notification::where('notificationable_id','=',$group->id)->where('notificationable_type','like','%Group%')->where('notificationable_type','!=','GroupDelete')->delete();
+        GroupInvite::where('group_id','=',$group->id)->delete();
+        $usrgrpusr = UserGroupUser::where('group_id',$group->id)->get();
+        if(!empty($usrgrpusr)){
+            foreach($usrgrpusr as $usrgrp) {                
+                $groupnotification = new Notification;
+                $groupnotification->notificationable_id   = $id;
+                $groupnotification->notificationable_type = 'GroupDelete';
+                $groupnotification->text                  = group_name($id).'</a>  has been deleted on ';
+                $groupnotification->user_id               = $usrgrp->user_id;
+                $groupnotification->added_by              = 1;
+                $groupnotification->save();
+            }
+        }
+        Feed::where('type','=','Group')->where('feedable_id','=',$group->id)->delete();;
+        Post::where('type','=','Group')->where('group_id','=',$group->id)->delete();;
+
+       /* $file1 = 'uploads/group_images/'.$group->cover_image;
+        $file2 = 'uploads/group_images/thumb/'.$group->cover_image;
+        $file3 = 'uploads/group_images/profile_image/'.$group->profile_image;
+        File::delete($file1, $file2,$file3);*/
+        UserGroupUser::where('group_id','=',$group->id)->delete();;
+        GroupUserModerator::where('group_id','=',$group->id)->delete();;
+        $group->delete();
+        return \Redirect::Route('group_list')->with('success', 'Record deleted successfully');
+
+    }
+
+    
+}
